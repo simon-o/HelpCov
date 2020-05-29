@@ -29,7 +29,7 @@ final class ViewController: UIViewController {
         viewModel?.addMarker = addMarker
         
         navigationController?.title = "HelpCov"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addPressed))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "add_label".localizedString, style: .plain, target: self, action: #selector(addPressed))
         
         map.showsUserLocation = true
         map.delegate = self

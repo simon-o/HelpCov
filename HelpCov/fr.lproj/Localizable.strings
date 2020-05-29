@@ -7,3 +7,14 @@
 */
 
 "name_label" = "Nom";
+"mask_customer_label" = "Le port du masque est obligatoire pour les clients";
+"mask_employe_label" = "Le port du masque est obligatoire pour les employes";
+"distancing_label" = "Les regles de distance sont respectées";
+"hand_gel_label" = "Gel Hydro alcoolique disponible";
+"payment_label" = "Payment sans contact";
+"security_label" = "Vous etes vous senti en securité durant votre visite ?";
+"clean_label" = "etait ce propre ?";
+"quality_label" = "Qualité du service";
+
+"add_label" = "Ajouter";
+"save_label" = "Sauvegarder";

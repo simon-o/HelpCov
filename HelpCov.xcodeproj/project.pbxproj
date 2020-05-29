@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D0C559A24817A27000DF1C7 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0C559924817A27000DF1C7 /* Tools.swift */; };
 		2D3FD0F7246EC2CB00EDD02C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3FD0F6246EC2CB00EDD02C /* AppDelegate.swift */; };
 		2D3FD0F9246EC2CB00EDD02C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3FD0F8246EC2CB00EDD02C /* SceneDelegate.swift */; };
 		2D3FD0FB246EC2CB00EDD02C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3FD0FA246EC2CB00EDD02C /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		026F27A694986B2A3B066ACE /* Pods-HelpCovTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCovTests.debug.xcconfig"; path = "Target Support Files/Pods-HelpCovTests/Pods-HelpCovTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0DF275B6CCFB44BCAF95CC60 /* Pods-HelpCovTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCovTests.release.xcconfig"; path = "Target Support Files/Pods-HelpCovTests/Pods-HelpCovTests.release.xcconfig"; sourceTree = "<group>"; };
 		2BCC7B1C74E9A56BD289A016 /* Pods-HelpCov-HelpCovUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCov-HelpCovUITests.debug.xcconfig"; path = "Target Support Files/Pods-HelpCov-HelpCovUITests/Pods-HelpCov-HelpCovUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D0C559924817A27000DF1C7 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		2D3FD0F3246EC2CB00EDD02C /* HelpCov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpCov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3FD0F6246EC2CB00EDD02C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D3FD0F8246EC2CB00EDD02C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		2D3FD0F5246EC2CB00EDD02C /* HelpCov */ = {
 			isa = PBXGroup;
 			children = (
+				2D0C559924817A27000DF1C7 /* Tools.swift */,
 				2D3FD0F6246EC2CB00EDD02C /* AppDelegate.swift */,
 				2D3FD0F8246EC2CB00EDD02C /* SceneDelegate.swift */,
 				2D3FD126246EC30D00EDD02C /* Map */,
@@ -475,6 +478,7 @@
 				2D3FD0FB246EC2CB00EDD02C /* ViewController.swift in Sources */,
 				2D3FD0F7246EC2CB00EDD02C /* AppDelegate.swift in Sources */,
 				2D3FD0F9246EC2CB00EDD02C /* SceneDelegate.swift in Sources */,
+				2D0C559A24817A27000DF1C7 /* Tools.swift in Sources */,
 				2D3FD128246EC50400EDD02C /* MapViewModel.swift in Sources */,
 				2DADE61B248135CE00219D0C /* AddReviewViewController.swift in Sources */,
 			);
