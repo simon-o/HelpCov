@@ -18,3 +18,6 @@
 
 "add_label" = "Add";
 "save_label" = "Save";
+
+"yes_label" = "Yes";
+"no_label" = "No";

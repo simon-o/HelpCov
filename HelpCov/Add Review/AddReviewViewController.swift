@@ -13,20 +13,40 @@ final class AddReviewViewController: UIViewController {
     private var viewModel: AddReviewViewModelProtocol?
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameTextfield: UITextField!
+    
     @IBOutlet weak var maskCustomerLabel: UILabel!
+    @IBOutlet weak var maskCustomerSegmented: UISegmentedControl!
+    
     @IBOutlet weak var maskEmployeLabel: UILabel!
+    @IBOutlet weak var maskEmployeSegmented: UISegmentedControl!
+    
     @IBOutlet weak var distancingLabel: UILabel!
+    @IBOutlet weak var distancingSegmented: UISegmentedControl!
+    
     @IBOutlet weak var handGelLabel: UILabel!
+    @IBOutlet weak var handGelSegmented: UISegmentedControl!
+    
     @IBOutlet weak var paymentLabel: UILabel!
+    @IBOutlet weak var paymentSegmented: UISegmentedControl!
+    
     @IBOutlet weak var securityLabel: UILabel!
+    @IBOutlet weak var securitySegmented: UISegmentedControl!
+    
     @IBOutlet weak var cleanLabel: UILabel!
+    @IBOutlet weak var cleanSegmented: UISegmentedControl!
+    
     @IBOutlet weak var qualityLabel: UILabel!
-
+    @IBOutlet weak var quantitySegmented: UISegmentedControl!
+    
+    @IBOutlet var ArraySegmented: [UISegmentedControl]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUp()
+        setUpSegmented()
     }
     
     private func setUp() {
@@ -43,7 +63,13 @@ final class AddReviewViewController: UIViewController {
         securityLabel.text = "security_label".localizedString
         cleanLabel.text = "clean_label".localizedString
         qualityLabel.text = "quality_label".localizedString
-        
+    }
+    
+    private func setUpSegmented() {
+        for segmented in ArraySegmented {
+            segmented.setTitle("yes_label".localizedString, forSegmentAt: 0)
+            segmented.setTitle("no_label".localizedString, forSegmentAt: 1)
+        }
     }
     
     @objc private func donePressed() {

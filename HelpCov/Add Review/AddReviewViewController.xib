@@ -10,15 +10,32 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddReviewViewController" customModule="HelpCov" customModuleProvider="target">
             <connections>
                 <outlet property="cleanLabel" destination="3Qb-Uy-XhM" id="3gc-fv-vyK"/>
+                <outlet property="cleanSegmented" destination="zsJ-FB-am1" id="4Mm-V5-j91"/>
                 <outlet property="distancingLabel" destination="De5-pX-5B7" id="HLg-3f-ezI"/>
+                <outlet property="distancingSegmented" destination="DcX-Gl-EZq" id="giH-nn-mYQ"/>
                 <outlet property="handGelLabel" destination="FOD-Zl-n4w" id="0xf-HQ-AWv"/>
+                <outlet property="handGelSegmented" destination="xew-IA-7IT" id="cvL-Jl-bnh"/>
                 <outlet property="maskCustomerLabel" destination="Rt5-hY-JxV" id="Bwg-Y5-uIV"/>
+                <outlet property="maskCustomerSegmented" destination="4yD-Fq-TON" id="FfM-Dq-Tfy"/>
                 <outlet property="maskEmployeLabel" destination="qYI-0f-Cay" id="K2J-ar-H1e"/>
+                <outlet property="maskEmployeSegmented" destination="3mH-T4-Wo8" id="eu8-DC-5Lt"/>
                 <outlet property="nameLabel" destination="0OF-4X-tTL" id="h3Z-A4-yrw"/>
+                <outlet property="nameTextfield" destination="PYq-Za-fUx" id="65d-aj-ycf"/>
                 <outlet property="paymentLabel" destination="UNq-UR-Usx" id="ST7-h0-EVx"/>
+                <outlet property="paymentSegmented" destination="bXr-lH-SUs" id="f0P-CQ-Q6r"/>
                 <outlet property="qualityLabel" destination="gd2-gf-H8Q" id="TOL-m6-YBl"/>
+                <outlet property="quantitySegmented" destination="G81-6O-23K" id="sXI-Yq-9HY"/>
                 <outlet property="securityLabel" destination="AKr-Gd-OLw" id="xP2-tf-p2W"/>
+                <outlet property="securitySegmented" destination="NRc-ik-ybu" id="9gG-5L-xME"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="ArraySegmented" destination="G81-6O-23K" collectionClass="NSMutableArray" id="Fcv-Pg-GtK"/>
+                <outletCollection property="ArraySegmented" destination="zsJ-FB-am1" collectionClass="NSMutableArray" id="gkH-x0-oys"/>
+                <outletCollection property="ArraySegmented" destination="NRc-ik-ybu" collectionClass="NSMutableArray" id="jpo-cu-urA"/>
+                <outletCollection property="ArraySegmented" destination="bXr-lH-SUs" collectionClass="NSMutableArray" id="ALt-or-iFF"/>
+                <outletCollection property="ArraySegmented" destination="xew-IA-7IT" collectionClass="NSMutableArray" id="06Y-sz-enS"/>
+                <outletCollection property="ArraySegmented" destination="DcX-Gl-EZq" collectionClass="NSMutableArray" id="phM-bE-Qaf"/>
+                <outletCollection property="ArraySegmented" destination="3mH-T4-Wo8" collectionClass="NSMutableArray" id="Tcv-cH-8uA"/>
+                <outletCollection property="ArraySegmented" destination="4yD-Fq-TON" collectionClass="NSMutableArray" id="Ayq-Jk-5tK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
