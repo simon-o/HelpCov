@@ -21,6 +21,7 @@ final class AddReviewViewController: UIViewController {
     @IBOutlet weak var securityLabel: UILabel!
     @IBOutlet weak var cleanLabel: UILabel!
     @IBOutlet weak var qualityLabel: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,7 @@ final class AddReviewViewController: UIViewController {
         securityLabel.text = "security_label".localizedString
         cleanLabel.text = "clean_label".localizedString
         qualityLabel.text = "quality_label".localizedString
+        
     }
     
     @objc private func donePressed() {
