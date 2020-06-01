@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MapKit
 
 final class AddReviewViewController: UIViewController {
     
     private var viewModel: AddReviewViewModelProtocol?
+    
+    @IBOutlet weak var searchButton: UIButton!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextfield: UITextField!
@@ -54,6 +57,7 @@ final class AddReviewViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "save_label".localizedString, style: .plain, target: self, action: #selector(donePressed))
         
+        //move to viewModel
         nameLabel.text = "name_label".localizedString
         maskCustomerLabel.text = "mask_customer_label".localizedString
         maskEmployeLabel.text = "mask_employe_label".localizedString
@@ -63,9 +67,11 @@ final class AddReviewViewController: UIViewController {
         securityLabel.text = "security_label".localizedString
         cleanLabel.text = "clean_label".localizedString
         qualityLabel.text = "quality_label".localizedString
+        searchButton.setTitle("search_button_title".localizedString, for: .normal)
     }
     
     private func setUpSegmented() {
+        //same move
         for segmented in ArraySegmented {
             segmented.setTitle("yes_label".localizedString, forSegmentAt: 0)
             segmented.setTitle("no_label".localizedString, forSegmentAt: 1)
@@ -74,5 +80,27 @@ final class AddReviewViewController: UIViewController {
     
     @objc private func donePressed() {
         viewModel?.donePressed()
+    }
+    
+    func  test() {
+        let address = "waitrose, west hampstead, nw61rn"
+
+        CLGeocoder().geocodeAddressString(address) { (placemarks, error) in
+            guard let placemarks = placemarks, let location = placemarks.first?.location else {return}
+            print(location)
+        }
+    }
+    
+
+    @IBAction func searchAddressPressed(_ sender: Any) {
+        navigationController?.show(SearchAddressViewController(), sender: nil)
+    }
+    
+    func getAddressFrom(url: String) {
+        //        let location = CLLocation.init(latitude: 43.601860, longitude: 1.243202)
+        //        CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+        //            guard let placemarks = placemarks, let location = placemarks.first?.administrativeArea else {return}
+        //            print(location)
+        //        }
     }
 }

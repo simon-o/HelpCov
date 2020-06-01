@@ -15,6 +15,7 @@
 "security_label" = "Did you feel in security after visiting this place ?";
 "clean_label" = "Is it clean ?";
 "quality_label" = "Quality of service";
+"search_button_title" = "Search address";
 
 "add_label" = "Add";
 "save_label" = "Save";

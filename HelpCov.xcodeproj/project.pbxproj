@@ -26,6 +26,9 @@
 		2DADE62624816FD300219D0C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DADE62824816FD300219D0C /* Localizable.strings */; };
 		2DB17F5B2483DFAC007F4B06 /* BoolFormComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB17F5A2483DFAC007F4B06 /* BoolFormComponent.swift */; };
 		2DB17F5E2483DFFD007F4B06 /* BoolFormComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB17F5D2483DFFD007F4B06 /* BoolFormComponent.xib */; };
+		2DC29DCF248523E700AF0BE8 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC29DCD248523E700AF0BE8 /* SearchAddressViewController.swift */; };
+		2DC29DD0248523E700AF0BE8 /* SearchAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC29DCE248523E700AF0BE8 /* SearchAddressViewController.xib */; };
+		2DC29DD32485242C00AF0BE8 /* SearchAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC29DD22485242C00AF0BE8 /* SearchAddressViewModel.swift */; };
 		4AC752736A523D6EAAF1E6C5 /* Pods_HelpCov_HelpCovUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373234A557F32D6901A54963 /* Pods_HelpCov_HelpCovUITests.framework */; };
 		773FFA39B044290423CD6712 /* Pods_HelpCovTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A475A68D5B306C703BD7C41A /* Pods_HelpCovTests.framework */; };
 		C08BA0072BFD5A9A5C19467E /* Pods_HelpCov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB4A4398AF89EFB317DCF10 /* Pods_HelpCov.framework */; };
@@ -79,6 +82,9 @@
 		2DADE62924816FD700219D0C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2DB17F5A2483DFAC007F4B06 /* BoolFormComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolFormComponent.swift; sourceTree = "<group>"; };
 		2DB17F5D2483DFFD007F4B06 /* BoolFormComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoolFormComponent.xib; sourceTree = "<group>"; };
+		2DC29DCD248523E700AF0BE8 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
+		2DC29DCE248523E700AF0BE8 /* SearchAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchAddressViewController.xib; sourceTree = "<group>"; };
+		2DC29DD22485242C00AF0BE8 /* SearchAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewModel.swift; sourceTree = "<group>"; };
 		373234A557F32D6901A54963 /* Pods_HelpCov_HelpCovUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpCov_HelpCovUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C1836EE557BDC98E93B32E2 /* Pods-HelpCov-HelpCovUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCov-HelpCovUITests.release.xcconfig"; path = "Target Support Files/Pods-HelpCov-HelpCovUITests/Pods-HelpCov-HelpCovUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8FBB1F460AF715D3F36680DD /* Pods-HelpCov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCov.release.xcconfig"; path = "Target Support Files/Pods-HelpCov/Pods-HelpCov.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 				2D3FD0F8246EC2CB00EDD02C /* SceneDelegate.swift */,
 				2DB17F5C2483DFE7007F4B06 /* Bool component */,
 				2D3FD126246EC30D00EDD02C /* Map */,
+				2DC29DD12485241300AF0BE8 /* Search */,
 				2DADE61D248135E100219D0C /* Add Review */,
 				2D3FD0FF246EC2CC00EDD02C /* Assets.xcassets */,
 				2D3FD101246EC2CC00EDD02C /* LaunchScreen.storyboard */,
@@ -220,6 +227,16 @@
 			path = "Bool component";
 			sourceTree = "<group>";
 		};
+		2DC29DD12485241300AF0BE8 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2DC29DCD248523E700AF0BE8 /* SearchAddressViewController.swift */,
+				2DC29DD22485242C00AF0BE8 /* SearchAddressViewModel.swift */,
+				2DC29DCE248523E700AF0BE8 /* SearchAddressViewController.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		7E18B62FA7CB27AD58A9564C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +272,7 @@
 				2D3FD0F0246EC2CB00EDD02C /* Frameworks */,
 				2D3FD0F1246EC2CB00EDD02C /* Resources */,
 				67A927CFDB9D0050D63BAA0A /* [CP] Embed Pods Frameworks */,
+				1A2B968BC4741EA66A6A4EA1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +311,7 @@
 				2D3FD111246EC2CC00EDD02C /* Frameworks */,
 				2D3FD112246EC2CC00EDD02C /* Resources */,
 				A82E2E166EF675481D6E0E10 /* [CP] Embed Pods Frameworks */,
+				A7D202D943DE536207446F68 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -356,6 +375,7 @@
 				2DB17F5E2483DFFD007F4B06 /* BoolFormComponent.xib in Resources */,
 				2DADE618248134E900219D0C /* ViewController.xib in Resources */,
 				2DADE62624816FD300219D0C /* Localizable.strings in Resources */,
+				2DC29DD0248523E700AF0BE8 /* SearchAddressViewController.xib in Resources */,
 				2DADE61C248135CE00219D0C /* AddReviewViewController.xib in Resources */,
 				2D3FD103246EC2CC00EDD02C /* LaunchScreen.storyboard in Resources */,
 				2D85F59424810A6F00E51126 /* GoogleService-Info.plist in Resources */,
@@ -380,6 +400,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1A2B968BC4741EA66A6A4EA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HelpCov/Pods-HelpCov-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HelpCov/Pods-HelpCov-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HelpCov/Pods-HelpCov-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		473092C7640BB132AC5FFBCC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -463,6 +500,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A7D202D943DE536207446F68 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HelpCov-HelpCovUITests/Pods-HelpCov-HelpCovUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HelpCov-HelpCovUITests/Pods-HelpCov-HelpCovUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HelpCov-HelpCovUITests/Pods-HelpCov-HelpCovUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A82E2E166EF675481D6E0E10 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -496,7 +550,9 @@
 				2D0C559A24817A27000DF1C7 /* Tools.swift in Sources */,
 				2DB17F5B2483DFAC007F4B06 /* BoolFormComponent.swift in Sources */,
 				2D3FD128246EC50400EDD02C /* MapViewModel.swift in Sources */,
+				2DC29DCF248523E700AF0BE8 /* SearchAddressViewController.swift in Sources */,
 				2DADE61B248135CE00219D0C /* AddReviewViewController.swift in Sources */,
+				2DC29DD32485242C00AF0BE8 /* SearchAddressViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2275,6 +2275,18 @@ Copyright 2020 Google
    limitations under the License.
 
 
+## GoogleMaps
+
+Copyright 2019 Google
+
+## GooglePlacePicker
+
+Copyright 2019 Google
+
+## GooglePlaces
+
+Copyright 2019 Google
+
 ## GoogleUtilities
 
 

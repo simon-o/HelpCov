@@ -10,6 +10,8 @@ target 'HelpCov' do
       pod 'Firebase/Analytics'
       pod 'Firebase/Auth'
       pod 'Firebase/Database'
+      pod 'GooglePlacePicker'
+      
 
   target 'HelpCovTests' do
     inherit! :search_paths
