@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 protocol MapServiceProtocol: AnyObject {
-    func addValue(name: String, subtitle: String,location: CLLocationCoordinate2D, completion: @escaping ((Result<Void, Error>) -> Void))
+    func addValue(name: String ,location: CLLocationCoordinate2D, address: String, maskCutomer: Bool, maskEmploye: Bool, distancing: Bool, hangGel: Bool, payment: Bool, security: Bool, clean: Bool, quality: Bool, completion: @escaping ((Result<Void, Error>) -> Void))
     func getValue(completion: @escaping ((Result<[MapPoint], Error>) -> Void))
 }
 
@@ -28,15 +28,23 @@ extension MapService: MapServiceProtocol {
         }
     }
     
-    func addValue(name: String, subtitle: String,location: CLLocationCoordinate2D, completion: @escaping ((Result<Void, Error>) -> Void)) {
-        let ID = ref.childByAutoId().key!
-        let entry: [String: Any] = ["autoID" : ID,
-                                    "title" : name,
-                                    "subtitle" : subtitle,
-                                    "latitude" : location.latitude,
-                                    "longitude" : location.longitude]
+    func addValue(name: String ,location: CLLocationCoordinate2D, address: String, maskCutomer: Bool, maskEmploye: Bool, distancing: Bool, hangGel: Bool, payment: Bool, security: Bool, clean: Bool, quality: Bool, completion: @escaping ((Result<Void, Error>) -> Void)) {
         
-        ref.child("items").child(ID).setValue(entry) { (Error, DatabaseReference) in
+        let entry: [String: Any] = ["title" : name,
+                                    "latitude" : location.latitude,
+                                    "longitude" : location.longitude,
+                                    "address" : address,
+                                    "maskCutomer" : maskCutomer,
+                                    "maskEmploye" : maskEmploye,
+                                    "distancing" : distancing,
+                                    "hangGel" : hangGel,
+                                    "payment" : payment,
+                                    "security" : security,
+                                    "clean" : clean,
+                                    "quality" : quality
+        ]
+        
+        ref.child("items").child(address).setValue(entry) { (Error, DatabaseReference) in
             if let error = Error {
                 completion(.failure(error))
             } else {
@@ -44,16 +52,4 @@ extension MapService: MapServiceProtocol {
             }
         }
     }
-    
-//    "name_label" = "Name";
-//    "mask_customer_label" = "Face mask mandatory for customers";
-//    "mask_employe_label" = "Face mask mandatory for employees";
-//    "distancing_label" = "Social distancing respected";
-//    "hand_gel_label" = "Free hand gel for customers";
-//    "payment_label" = "Contact less payment";
-//    "security_label" = "Did you feel in security after visiting this place ?";
-//    "clean_label" = "Is it clean ?";
-//    "quality_label" = "Quality of service";
-//    "search_button_title" = "Search address";
-//    func updateValue()
 }

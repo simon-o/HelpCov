@@ -42,7 +42,6 @@ final class MapViewModel: NSObject {
             let annotation = MKPointAnnotation()
             annotation.coordinate = point.locationCoordinate()
             annotation.title = point.title
-            annotation.subtitle = point.subtitle
             
             returnArray.append(annotation)
         }

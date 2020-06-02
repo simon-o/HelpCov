@@ -26,6 +26,14 @@ protocol AddReviewViewModelProtocol {
     
     var updateName: ((String) -> Void)? {get set}
     
+    var getMaskCustomerValue: (() -> Bool)? {get set}
+    var getMaskEmployeValue: (() -> Bool)? {get set}
+    var getDistancingValue: (() -> Bool)? {get set}
+    var getHangGelValue: (() -> Bool)? {get set}
+    var getPaymentValue: (() -> Bool)? {get set}
+    var getSecurityValue: (() -> Bool)? {get set}
+    var getCleanValue: (() -> Bool)? {get set}
+    var getQualityValue: (() -> Bool)? {get set}
 }
 
 final class AddReviewViewModel: NSObject {
@@ -33,16 +41,35 @@ final class AddReviewViewModel: NSObject {
     let service: MapServiceProtocol
     var updateName: ((String) -> Void)?
     
+    var getMaskCustomerValue: (() -> Bool)?
+    var getMaskEmployeValue: (() -> Bool)?
+    var getDistancingValue: (() -> Bool)?
+    var getHangGelValue: (() -> Bool)?
+    var getPaymentValue: (() -> Bool)?
+    var getSecurityValue: (() -> Bool)?
+    var getCleanValue: (() -> Bool)?
+    var getQualityValue: (() -> Bool)?
+    
+    private var place: GMSPlace? {
+        didSet {
+            updateInformations()
+        }
+    }
+    
     init(service: MapServiceProtocol) {
         self.service = service
+    }
+    
+    private func updateInformations() {
+        if let name = place?.name {
+            updateName?("\("name_label".localizedString): \(String(describing: name))")
+        }
     }
 }
 
 extension AddReviewViewModel: AddReviewViewModelProtocol {
     func fetchLocation(coordinate: GMSPlace) {
-        if let name = coordinate.name {
-            updateName?("\("name_label".localizedString): \(String(describing: name))")
-        }
+        place = coordinate
     }
     
     func getMaskCustomer() -> String {
@@ -82,10 +109,18 @@ extension AddReviewViewModel: AddReviewViewModelProtocol {
     }
     
     func donePressed() {
-        service.addValue(name: "test", subtitle: "test", location: CLLocationCoordinate2D.init(latitude: 51.552325, longitude: -0.1961228)) { (result) in
-            print(result)
+        service.addValue(name: place?.name ?? "",
+                         location: place?.coordinate ?? CLLocationCoordinate2D.init(latitude: 0.0, longitude: 0.0),
+                         address: place?.addressComponents?.first?.name ?? "",
+                         maskCutomer: getMaskCustomerValue?() ?? false,
+                         maskEmploye: getMaskEmployeValue?() ?? false,
+                         distancing: getDistancingValue?() ?? false,
+                         hangGel: getHangGelValue?() ?? false,
+                         payment: getPaymentValue?() ?? false,
+                         security: getSecurityValue?() ?? false,
+                         clean: getCleanValue?() ?? false,
+                         quality: getQualityValue?() ?? false) { (result) in
+                            
         }
     }
-    
-    
 }

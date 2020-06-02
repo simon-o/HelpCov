@@ -13,3 +13,9 @@ extension String {
         return NSLocalizedString(self, comment: "")
     }
 }
+
+extension UISegmentedControl {
+    func isTrue() -> Bool {
+        return self.selectedSegmentIndex == 0
+    }
+}

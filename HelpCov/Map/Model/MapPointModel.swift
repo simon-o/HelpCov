@@ -14,7 +14,7 @@ import FirebaseCore
 
 struct MapPoint: Codable {
     let title: String
-    let subtitle: String
+    
     let latitude: Double
     let longitude: Double
     
@@ -53,7 +53,6 @@ final class Parser {
         keys?.forEach({ (key) in
             let item = value?[key] as? [String: Any]
             itemsList.append(MapPoint.init(title: item?["title"] as! String,
-                                           subtitle: item?["subtitle"] as! String,
                                            latitude: item?["latitude"] as! Double,
                                            longitude: item?["longitude"] as! Double
             ))

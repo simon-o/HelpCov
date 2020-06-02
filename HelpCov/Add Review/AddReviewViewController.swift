@@ -73,8 +73,42 @@ final class AddReviewViewController: UIViewController {
         cleanLabel.text = viewModel?.getClean()
         qualityLabel.text = viewModel?.getQuality()
         searchButton.setTitle(viewModel?.getSearchButton(), for: .normal)
+        
+        viewModel?.getMaskCustomerValue = getMaskCustomerValue
+        viewModel?.getMaskEmployeValue = getMaskEmployeValue
+        viewModel?.getDistancingValue = getDistancingValue
+        viewModel?.getHangGelValue = getHangGelValue
+        viewModel?.getPaymentValue = getPaymentValue
+        viewModel?.getSecurityValue = getSecurityValue
+        viewModel?.getCleanValue = getCleanValue
+        viewModel?.getQualityValue = getQualityValue
+        
     }
     
+    private func getMaskCustomerValue() -> Bool {
+        return maskCustomerSegmented.isTrue()
+    }
+    private func getMaskEmployeValue() -> Bool {
+        return maskEmployeSegmented.isTrue()
+    }
+    private func getDistancingValue() -> Bool {
+        return distancingSegmented.isTrue()
+    }
+    private func getHangGelValue() -> Bool {
+        return handGelSegmented.isTrue()
+    }
+    private func getPaymentValue() -> Bool {
+        return paymentSegmented.isTrue()
+    }
+    private func getSecurityValue() -> Bool {
+        return securitySegmented.isTrue()
+    }
+    private func getCleanValue() -> Bool {
+        return cleanSegmented.isTrue()
+    }
+    private func getQualityValue() -> Bool {
+        return quantitySegmented.isTrue()
+    }
     private func updateName(name: String) {
         nameLabel.text = name
     }
