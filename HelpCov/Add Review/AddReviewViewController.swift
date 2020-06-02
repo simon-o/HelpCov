@@ -57,28 +57,26 @@ final class AddReviewViewController: UIViewController {
     
     private func setUp() {
         viewModel = AddReviewViewModel(service: MapService())
-        searchVC?.fetchLocation = fetchLocation
+        searchVC?.fetchLocation = viewModel?.fetchLocation
+        viewModel?.updateName = updateName
         
+        //move
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "save_label".localizedString, style: .plain, target: self, action: #selector(donePressed))
         
-        //move to viewModel
         nameLabel.text = nil
-        maskCustomerLabel.text = "mask_customer_label".localizedString
-        maskEmployeLabel.text = "mask_employe_label".localizedString
-        distancingLabel.text = "distancing_label".localizedString
-        handGelLabel.text = "hand_gel_label".localizedString
-        paymentLabel.text = "payment_label".localizedString
-        securityLabel.text = "security_label".localizedString
-        cleanLabel.text = "clean_label".localizedString
-        qualityLabel.text = "quality_label".localizedString
-        searchButton.setTitle("search_button_title".localizedString, for: .normal)
+        maskCustomerLabel.text = viewModel?.getMaskCustomer()
+        maskEmployeLabel.text = viewModel?.getMaskEmploye()
+        distancingLabel.text = viewModel?.getDistance()
+        handGelLabel.text = viewModel?.getHandGel()
+        paymentLabel.text = viewModel?.getPayment()
+        securityLabel.text = viewModel?.getSecurity()
+        cleanLabel.text = viewModel?.getClean()
+        qualityLabel.text = viewModel?.getQuality()
+        searchButton.setTitle(viewModel?.getSearchButton(), for: .normal)
     }
     
-    private func fetchLocation(coordinate: GMSPlace) {
-        //move same
-        if let name = coordinate.name {
-            nameLabel.text = "\("name_label".localizedString): \(String(describing: name))"
-        }
+    private func updateName(name: String) {
+        nameLabel.text = name
     }
     
     private func setUpSegmented() {
