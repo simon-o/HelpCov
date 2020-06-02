@@ -45,5 +45,15 @@ extension MapService: MapServiceProtocol {
         }
     }
     
+//    "name_label" = "Name";
+//    "mask_customer_label" = "Face mask mandatory for customers";
+//    "mask_employe_label" = "Face mask mandatory for employees";
+//    "distancing_label" = "Social distancing respected";
+//    "hand_gel_label" = "Free hand gel for customers";
+//    "payment_label" = "Contact less payment";
+//    "security_label" = "Did you feel in security after visiting this place ?";
+//    "clean_label" = "Is it clean ?";
+//    "quality_label" = "Quality of service";
+//    "search_button_title" = "Search address";
 //    func updateValue()
 }

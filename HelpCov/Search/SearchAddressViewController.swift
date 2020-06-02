@@ -14,10 +14,16 @@ class SearchAddressViewController: UIViewController {
 
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
-
+    private var viewModel: SearchAddressViewModelProtocol?
+    
+    var fetchLocation: ((GMSPlace) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel = SearchAddressViewModel()
+        viewModel?.dismissView = dismiss
+        viewModel?.fetchLocation = returnLocation
         setupSearchController()
     }
 
@@ -32,54 +38,32 @@ class SearchAddressViewController: UIViewController {
         navigationItem.titleView = searchController?.searchBar
         definesPresentationContext = true
         searchController?.hidesNavigationBarDuringPresentation = false
+        resultsViewController?.delegate = self
     }
     
+    private func returnLocation(coordinate: GMSPlace) {
+        if let tmpFetch = fetchLocation {
+            tmpFetch(coordinate)
+        }
+    }
     
-//    var resultsViewController: GMSAutocompleteResultsViewController?
-//       var searchController: UISearchController?
-//       override func viewDidLoad() {
-//           super.viewDidLoad()
-//           self.title = "Select Addres"
-//           resultsViewController = GMSAutocompleteResultsViewController()
-//           resultsViewController?.delegate = self
-//           searchController = UISearchController(searchResultsController: resultsViewController)
-//           searchController?.searchResultsUpdater = resultsViewController
-//           let subView = UIView(frame: CGRect(x: 0, y: 100, width: 100, height: 45.0))
-//           subView.addSubview((searchController?.searchBar)!)
-//           view.addSubview(subView)
-//           definesPresentationContext = true
-//           // Do any additional setup after loading the view.
-//       }
-//
-//       @IBAction func cancelAct(_ sender: Any) {
-//           self.dismiss(animated: true, completion: nil)
-//       }
+    private func dismiss() {
+        navigationController?.dismiss(animated: true, completion: {
+            self.navigationController?.popViewController(animated: true)
+        })
+    }
+    
 }
 
+extension SearchAddressViewController: GMSAutocompleteResultsViewControllerDelegate {
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didAutocompleteWith place: GMSPlace) {
+        searchController?.isActive = false
+        viewModel?.getLocation(coordinate: place)
+    }
 
-//extension SearchAddressViewController: GMSAutocompleteResultsViewControllerDelegate {
-//    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
-//                           didAutocompleteWith place: GMSPlace) {
-//        searchController?.isActive = false
-//        // Do something with the selected place.
-//        print("Place Address: \(place.formattedAddress)")
-//        searchController?.searchBar.text = place.formattedAddress
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//
-//    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
-//                           didFailAutocompleteWithError error: Error){
-//        // TODO: handle the error.
-//        print("Error: ", error.localizedDescription)
-//    }
-//
-//    // Turn the network activity indicator on and off again.
-//    func didRequestAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-//    }
-//
-//    func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//    }
-//}
-//
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didFailAutocompleteWithError error: Error){
+        print("Error: ", error.localizedDescription)
+    }
+}

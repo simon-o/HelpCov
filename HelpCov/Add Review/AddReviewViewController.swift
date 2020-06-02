@@ -8,15 +8,16 @@
 
 import UIKit
 import MapKit
+import GooglePlaces
 
 final class AddReviewViewController: UIViewController {
     
     private var viewModel: AddReviewViewModelProtocol?
+    private var searchVC: SearchAddressViewController?
     
     @IBOutlet weak var searchButton: UIButton!
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var nameTextfield: UITextField!
     
     @IBOutlet weak var maskCustomerLabel: UILabel!
     @IBOutlet weak var maskCustomerSegmented: UISegmentedControl!
@@ -48,17 +49,20 @@ final class AddReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchVC = SearchAddressViewController()
+        
         setUp()
         setUpSegmented()
     }
     
     private func setUp() {
         viewModel = AddReviewViewModel(service: MapService())
+        searchVC?.fetchLocation = fetchLocation
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "save_label".localizedString, style: .plain, target: self, action: #selector(donePressed))
         
         //move to viewModel
-        nameLabel.text = "name_label".localizedString
+        nameLabel.text = nil
         maskCustomerLabel.text = "mask_customer_label".localizedString
         maskEmployeLabel.text = "mask_employe_label".localizedString
         distancingLabel.text = "distancing_label".localizedString
@@ -68,6 +72,13 @@ final class AddReviewViewController: UIViewController {
         cleanLabel.text = "clean_label".localizedString
         qualityLabel.text = "quality_label".localizedString
         searchButton.setTitle("search_button_title".localizedString, for: .normal)
+    }
+    
+    private func fetchLocation(coordinate: GMSPlace) {
+        //move same
+        if let name = coordinate.name {
+            nameLabel.text = "\("name_label".localizedString): \(String(describing: name))"
+        }
     }
     
     private func setUpSegmented() {
@@ -93,7 +104,9 @@ final class AddReviewViewController: UIViewController {
     
 
     @IBAction func searchAddressPressed(_ sender: Any) {
-        navigationController?.show(SearchAddressViewController(), sender: nil)
+        if let tmpSearchVC = searchVC {
+            navigationController?.show(tmpSearchVC, sender: nil)
+        }
     }
     
     func getAddressFrom(url: String) {
