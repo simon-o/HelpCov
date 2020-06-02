@@ -111,7 +111,7 @@ extension AddReviewViewModel: AddReviewViewModelProtocol {
     func donePressed() {
         service.addValue(name: place?.name ?? "",
                          location: place?.coordinate ?? CLLocationCoordinate2D.init(latitude: 0.0, longitude: 0.0),
-                         address: place?.addressComponents?.first?.name ?? "",
+                         address: place?.formattedAddress ?? "",
                          maskCutomer: getMaskCustomerValue?() ?? false,
                          maskEmploye: getMaskEmployeValue?() ?? false,
                          distancing: getDistancingValue?() ?? false,
