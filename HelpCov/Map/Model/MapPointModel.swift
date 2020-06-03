@@ -44,11 +44,12 @@ final class Parser {
         let keys = value?.allKeys
         
         var itemsList: [MapPoint] = []
+        
         keys?.forEach({ (key) in
-            let item = value?[key] as? [String: Any]
+            let item = value?[key] as? [String: [String: Any]]
             
-            for tmp in item!.values {
-                print(tmp)
+            for (key, value2) in item! {
+                print(value2["title"])
 //                itemsList.array.append(MapPoint.init(title: tmp["title"] as! String,
 //                                                          latitude: tmp["latitude"] as! Double,
 //                                                          longitude: tmp["longitude"] as! Double,
