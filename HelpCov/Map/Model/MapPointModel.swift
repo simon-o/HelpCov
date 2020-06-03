@@ -18,10 +18,16 @@ struct MapPoint: Codable {
     let latitude: Double
     let longitude: Double
     
-//    let faceMask: Bool
-    
-    
-    
+    let address: String
+    let maskCustomer: Bool
+    let maskEmploye: Bool
+    let distancing: Bool
+    let handgel: Bool
+    let payment: Bool
+    let security: Bool
+    let clean: Bool
+    let quality: Bool
+        
     func locationCoordinate() -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: self.latitude,
                                       longitude: self.longitude)
@@ -33,28 +39,21 @@ final class Parser {
         let value = snapshot.value as? NSDictionary
         let keys = value?.allKeys
         
-        
-        //------------------
-//        do {
-//            let person = try FirebaseDecoder().decode(MapPoint.self, from: value)
-//            print(person)
-//        } catch let error {
-//            print(error)
-//        }
-        //pod 'CodableFirebase'
-        //------------------
-        
-        
-        
-        
-        
-        
         var itemsList: [MapPoint] = []
         keys?.forEach({ (key) in
             let item = value?[key] as? [String: Any]
             itemsList.append(MapPoint.init(title: item?["title"] as! String,
                                            latitude: item?["latitude"] as! Double,
-                                           longitude: item?["longitude"] as! Double
+                                           longitude: item?["longitude"] as! Double,
+                                           address: item?["address"] as! String,
+                                           maskCustomer: item?["maskCustomer"] as! Bool,
+                                           maskEmploye: item?["maskEmploye"] as! Bool,
+                                           distancing: item?["distancing"] as! Bool,
+                                           handgel: item?["handgel"] as! Bool,
+                                           payment: item?["payment"] as! Bool,
+                                           security: item?["security"] as! Bool,
+                                           clean: item?["clean"] as! Bool,
+                                           quality: item?["quality"] as! Bool
             ))
         })
         return itemsList

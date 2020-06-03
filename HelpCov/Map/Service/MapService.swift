@@ -14,6 +14,7 @@ import FirebaseDatabase
 protocol MapServiceProtocol: AnyObject {
     func addValue(name: String ,location: CLLocationCoordinate2D, address: String, maskCutomer: Bool, maskEmploye: Bool, distancing: Bool, hangGel: Bool, payment: Bool, security: Bool, clean: Bool, quality: Bool, completion: @escaping ((Result<Void, Error>) -> Void))
     func getValue(completion: @escaping ((Result<[MapPoint], Error>) -> Void))
+    func filter(child: String)
 }
 
 final class MapService: NSObject {
@@ -34,7 +35,7 @@ extension MapService: MapServiceProtocol {
                                     "latitude" : location.latitude,
                                     "longitude" : location.longitude,
                                     "address" : address,
-                                    "maskCutomer" : maskCutomer,
+                                    "maskCustomer" : maskCutomer,
                                     "maskEmploye" : maskEmploye,
                                     "distancing" : distancing,
                                     "hangGel" : hangGel,
@@ -51,5 +52,15 @@ extension MapService: MapServiceProtocol {
                 completion(.success(()))
             }
         }
+    }
+    
+    func filter(child: String) {
+        let test = ref.child("items").queryOrdered(byChild: child).queryEqual(toValue: true)
+        test.observe(.value) { (snapshot) in
+            for childSnapshot in snapshot.children {
+                print(childSnapshot)
+            }
+        }
+        
     }
 }
