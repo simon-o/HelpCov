@@ -29,7 +29,7 @@ protocol AddReviewViewModelProtocol {
     var getMaskCustomerValue: (() -> Bool)? {get set}
     var getMaskEmployeValue: (() -> Bool)? {get set}
     var getDistancingValue: (() -> Bool)? {get set}
-    var getHangGelValue: (() -> Bool)? {get set}
+    var getHandGelValue: (() -> Bool)? {get set}
     var getPaymentValue: (() -> Bool)? {get set}
     var getSecurityValue: (() -> Bool)? {get set}
     var getCleanValue: (() -> Bool)? {get set}
@@ -44,7 +44,7 @@ final class AddReviewViewModel: NSObject {
     var getMaskCustomerValue: (() -> Bool)?
     var getMaskEmployeValue: (() -> Bool)?
     var getDistancingValue: (() -> Bool)?
-    var getHangGelValue: (() -> Bool)?
+    var getHandGelValue: (() -> Bool)?
     var getPaymentValue: (() -> Bool)?
     var getSecurityValue: (() -> Bool)?
     var getCleanValue: (() -> Bool)?
@@ -115,7 +115,7 @@ extension AddReviewViewModel: AddReviewViewModelProtocol {
                          maskCutomer: getMaskCustomerValue?() ?? false,
                          maskEmploye: getMaskEmployeValue?() ?? false,
                          distancing: getDistancingValue?() ?? false,
-                         hangGel: getHangGelValue?() ?? false,
+                         handGel: getHandGelValue?() ?? false,
                          payment: getPaymentValue?() ?? false,
                          security: getSecurityValue?() ?? false,
                          clean: getCleanValue?() ?? false,

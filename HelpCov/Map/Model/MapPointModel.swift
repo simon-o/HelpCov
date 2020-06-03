@@ -39,30 +39,34 @@ struct ListPoint: Codable {
 }
 
 final class Parser {
-    func parseItemList(snapshot: DataSnapshot) -> [MapPoint] {
+    func parseItemList(snapshot: DataSnapshot) -> [ListPoint] {
         let value = snapshot.value as? NSDictionary
         let keys = value?.allKeys
         
-        var itemsList: [MapPoint] = []
+        var itemsList: [ListPoint] = []
+        
         
         keys?.forEach({ (key) in
-            let item = value?[key] as? [String: [String: Any]]
-            
-            for (key, value2) in item! {
-                print(value2["title"])
-//                itemsList.array.append(MapPoint.init(title: tmp["title"] as! String,
-//                                                          latitude: tmp["latitude"] as! Double,
-//                                                          longitude: tmp["longitude"] as! Double,
-//                                                          address: tmp["address"] as! String,
-//                                                          maskCustomer: tmp["maskCustomer"] as! Bool,
-//                                                          maskEmploye: tmp["maskEmploye"] as! Bool,
-//                                                          distancing: tmp["distancing"] as! Bool,
-//                                                          handgel: tmp["handgel"] as! Bool,
-//                                                          payment: tmp["payment"] as! Bool,
-//                                                          security: tmp["security"] as! Bool,
-//                                                          clean: tmp["clean"] as! Bool,
-//                                                          quality: tmp["quality"] as! Bool
-//                           ))
+            if let rawData = value?[key] as? [String: [String: Any]] {
+                var listMapPoint: [MapPoint] = []
+                
+                for (_, dict) in rawData {
+                    listMapPoint.append(MapPoint.init(title: dict["title"] as! String,
+                                                       latitude: dict["latitude"] as! Double,
+                                                       longitude: dict["longitude"] as! Double,
+                                                       address: dict["address"] as! String,
+                                                       maskCustomer: dict["maskCustomer"] as! Bool,
+                                                       maskEmploye: dict["maskEmploye"] as! Bool,
+                                                       distancing: dict["distancing"] as! Bool,
+                                                       handgel: dict["handGel"] as! Bool,
+                                                       payment: dict["payment"] as! Bool,
+                                                       security: dict["security"] as! Bool,
+                                                       clean: dict["clean"] as! Bool,
+                                                       quality: dict["quality"] as! Bool))
+                }
+                
+                
+                itemsList.append(ListPoint.init(array: listMapPoint))
             }
         })
         return itemsList

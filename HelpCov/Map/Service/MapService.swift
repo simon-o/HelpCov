@@ -12,8 +12,8 @@ import FirebaseAuth
 import FirebaseDatabase
 
 protocol MapServiceProtocol: AnyObject {
-    func addValue(name: String ,location: CLLocationCoordinate2D, address: String, maskCutomer: Bool, maskEmploye: Bool, distancing: Bool, hangGel: Bool, payment: Bool, security: Bool, clean: Bool, quality: Bool, completion: @escaping ((Result<Void, Error>) -> Void))
-    func getValue(completion: @escaping ((Result<[MapPoint], Error>) -> Void))
+    func addValue(name: String ,location: CLLocationCoordinate2D, address: String, maskCutomer: Bool, maskEmploye: Bool, distancing: Bool, handGel: Bool, payment: Bool, security: Bool, clean: Bool, quality: Bool, completion: @escaping ((Result<Void, Error>) -> Void))
+    func getValue(completion: @escaping ((Result<[ListPoint], Error>) -> Void))
     func filter(child: String)
 }
 
@@ -23,13 +23,13 @@ final class MapService: NSObject {
 }
 
 extension MapService: MapServiceProtocol {
-    func getValue(completion: @escaping ((Result<[MapPoint], Error>) -> Void)) {
+    func getValue(completion: @escaping ((Result<[ListPoint], Error>) -> Void)) {
         ref.child("items").observe(.value) { (snapshot) in
             completion(.success(Parser().parseItemList(snapshot: snapshot)))
         }
     }
     
-    func addValue(name: String ,location: CLLocationCoordinate2D, address: String, maskCutomer: Bool, maskEmploye: Bool, distancing: Bool, hangGel: Bool, payment: Bool, security: Bool, clean: Bool, quality: Bool, completion: @escaping ((Result<Void, Error>) -> Void)) {
+    func addValue(name: String ,location: CLLocationCoordinate2D, address: String, maskCutomer: Bool, maskEmploye: Bool, distancing: Bool, handGel: Bool, payment: Bool, security: Bool, clean: Bool, quality: Bool, completion: @escaping ((Result<Void, Error>) -> Void)) {
         
         let entry: [String: Any] = ["title" : name,
                                     "latitude" : location.latitude,
@@ -38,7 +38,7 @@ extension MapService: MapServiceProtocol {
                                     "maskCustomer" : maskCutomer,
                                     "maskEmploye" : maskEmploye,
                                     "distancing" : distancing,
-                                    "hangGel" : hangGel,
+                                    "handGel" : handGel,
                                     "payment" : payment,
                                     "security" : security,
                                     "clean" : clean,

@@ -22,6 +22,11 @@ final class MapViewModel: NSObject {
     var updateLocalisation: ((CLLocationCoordinate2D) -> Void)?
     var addMarker: (([MKPointAnnotation]) -> Void)?
     let service: MapServiceProtocol
+    var list: [ListPoint]? {
+        didSet {
+            self.listMark = self.createAnnotation()
+        }
+    }
     private let locationManager = CLLocationManager()
     private var listMark: [MKPointAnnotation]? {
         didSet {
@@ -35,17 +40,16 @@ final class MapViewModel: NSObject {
         self.service = service
     }
     
-    private func createAnnotation(mapPoint: [MapPoint]) -> [MKPointAnnotation] {
+    private func createAnnotation() -> [MKPointAnnotation] {
         var returnArray = [MKPointAnnotation]()
+        guard let list = list else {return returnArray}
         
-        for point in mapPoint {
+        for point in list {
             let annotation = MKPointAnnotation()
-            annotation.coordinate = point.locationCoordinate()
-            annotation.title = point.title
-            
+            annotation.coordinate = point.array.first?.locationCoordinate() ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+            annotation.title = point.array.first?.title
             returnArray.append(annotation)
         }
-        
         return returnArray
     }
 }
@@ -75,8 +79,8 @@ extension MapViewModel: MapViewModelProtocol {
     func loadMarker() {
         service.getValue { (result) in
             switch result {
-            case .success(let mapPoint):
-                self.listMark = self.createAnnotation(mapPoint: mapPoint)
+            case .success(let list):
+                self.list = list
             case .failure(let error):
                 fatalError(error.localizedDescription)
             }

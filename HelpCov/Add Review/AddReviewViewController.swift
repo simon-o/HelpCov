@@ -77,7 +77,7 @@ final class AddReviewViewController: UIViewController {
         viewModel?.getMaskCustomerValue = getMaskCustomerValue
         viewModel?.getMaskEmployeValue = getMaskEmployeValue
         viewModel?.getDistancingValue = getDistancingValue
-        viewModel?.getHangGelValue = getHangGelValue
+        viewModel?.getHandGelValue = getHandGelValue
         viewModel?.getPaymentValue = getPaymentValue
         viewModel?.getSecurityValue = getSecurityValue
         viewModel?.getCleanValue = getCleanValue
@@ -94,7 +94,7 @@ final class AddReviewViewController: UIViewController {
     private func getDistancingValue() -> Bool {
         return distancingSegmented.isTrue()
     }
-    private func getHangGelValue() -> Bool {
+    private func getHandGelValue() -> Bool {
         return handGelSegmented.isTrue()
     }
     private func getPaymentValue() -> Bool {
