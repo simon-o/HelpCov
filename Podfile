@@ -11,6 +11,7 @@ target 'HelpCov' do
       pod 'Firebase/Auth'
       pod 'Firebase/Database'
       pod 'GooglePlacePicker'
+      pod 'CodableFirebase'
       
 
   target 'HelpCovTests' do

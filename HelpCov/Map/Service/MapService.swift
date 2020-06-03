@@ -45,7 +45,7 @@ extension MapService: MapServiceProtocol {
                                     "quality" : quality
         ]
         
-        ref.child("items").child(address).setValue(entry) { (Error, DatabaseReference) in
+        ref.child("items").child(address).childByAutoId().setValue(entry) { (Error, DatabaseReference) in
             if let error = Error {
                 completion(.failure(error))
             } else {

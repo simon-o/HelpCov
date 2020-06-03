@@ -34,6 +34,10 @@ struct MapPoint: Codable {
     }
 }
 
+struct ListPoint: Codable {
+    var array: [MapPoint]
+}
+
 final class Parser {
     func parseItemList(snapshot: DataSnapshot) -> [MapPoint] {
         let value = snapshot.value as? NSDictionary
@@ -42,19 +46,23 @@ final class Parser {
         var itemsList: [MapPoint] = []
         keys?.forEach({ (key) in
             let item = value?[key] as? [String: Any]
-            itemsList.append(MapPoint.init(title: item?["title"] as! String,
-                                           latitude: item?["latitude"] as! Double,
-                                           longitude: item?["longitude"] as! Double,
-                                           address: item?["address"] as! String,
-                                           maskCustomer: item?["maskCustomer"] as! Bool,
-                                           maskEmploye: item?["maskEmploye"] as! Bool,
-                                           distancing: item?["distancing"] as! Bool,
-                                           handgel: item?["handgel"] as! Bool,
-                                           payment: item?["payment"] as! Bool,
-                                           security: item?["security"] as! Bool,
-                                           clean: item?["clean"] as! Bool,
-                                           quality: item?["quality"] as! Bool
-            ))
+            
+            for tmp in item!.values {
+                print(tmp)
+//                itemsList.array.append(MapPoint.init(title: tmp["title"] as! String,
+//                                                          latitude: tmp["latitude"] as! Double,
+//                                                          longitude: tmp["longitude"] as! Double,
+//                                                          address: tmp["address"] as! String,
+//                                                          maskCustomer: tmp["maskCustomer"] as! Bool,
+//                                                          maskEmploye: tmp["maskEmploye"] as! Bool,
+//                                                          distancing: tmp["distancing"] as! Bool,
+//                                                          handgel: tmp["handgel"] as! Bool,
+//                                                          payment: tmp["payment"] as! Bool,
+//                                                          security: tmp["security"] as! Bool,
+//                                                          clean: tmp["clean"] as! Bool,
+//                                                          quality: tmp["quality"] as! Bool
+//                           ))
+            }
         })
         return itemsList
     }
