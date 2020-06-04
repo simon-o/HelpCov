@@ -23,6 +23,7 @@ protocol AddReviewViewModelProtocol {
     func getClean() -> String
     func getQuality() -> String
     func getSearchButton() -> String
+    func getNavTitle() -> String
     
     var updateName: ((String) -> Void)? {get set}
     
@@ -34,6 +35,11 @@ protocol AddReviewViewModelProtocol {
     var getSecurityValue: (() -> Bool)? {get set}
     var getCleanValue: (() -> Bool)? {get set}
     var getQualityValue: (() -> Bool)? {get set}
+    var popToPreviousView: (() -> Void)? {get set}
+    
+    func getYesLabel() -> String
+    func getNoLabel() -> String
+    
 }
 
 final class AddReviewViewModel: NSObject {
@@ -49,6 +55,7 @@ final class AddReviewViewModel: NSObject {
     var getSecurityValue: (() -> Bool)?
     var getCleanValue: (() -> Bool)?
     var getQualityValue: (() -> Bool)?
+    var popToPreviousView: (() -> Void)?
     
     private var place: GMSPlace? {
         didSet {
@@ -108,6 +115,18 @@ extension AddReviewViewModel: AddReviewViewModelProtocol {
         return "search_button_title".localizedString
     }
     
+    func getYesLabel() -> String {
+        return "yes_label".localizedString
+    }
+    
+    func getNoLabel() -> String {
+        return "no_label".localizedString
+    }
+    
+    func getNavTitle() -> String {
+        return "save_label".localizedString
+    }
+    
     func donePressed() {
         service.addValue(name: place?.name ?? "",
                          location: place?.coordinate ?? CLLocationCoordinate2D.init(latitude: 0.0, longitude: 0.0),
@@ -120,7 +139,11 @@ extension AddReviewViewModel: AddReviewViewModelProtocol {
                          security: getSecurityValue?() ?? false,
                          clean: getCleanValue?() ?? false,
                          quality: getQualityValue?() ?? false) { (result) in
-                            
+                            switch result {
+                            case .success:
+                                self.popToPreviousView?()
+                            case .failure(let error): break
+                            }
         }
     }
 }

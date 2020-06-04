@@ -24,8 +24,6 @@
 		2DADE61C248135CE00219D0C /* AddReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DADE61A248135CE00219D0C /* AddReviewViewController.xib */; };
 		2DADE61F2481360800219D0C /* AddReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DADE61E2481360800219D0C /* AddReviewViewModel.swift */; };
 		2DADE62624816FD300219D0C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DADE62824816FD300219D0C /* Localizable.strings */; };
-		2DB17F5B2483DFAC007F4B06 /* BoolFormComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB17F5A2483DFAC007F4B06 /* BoolFormComponent.swift */; };
-		2DB17F5E2483DFFD007F4B06 /* BoolFormComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB17F5D2483DFFD007F4B06 /* BoolFormComponent.xib */; };
 		2DC29DCF248523E700AF0BE8 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC29DCD248523E700AF0BE8 /* SearchAddressViewController.swift */; };
 		2DC29DD0248523E700AF0BE8 /* SearchAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC29DCE248523E700AF0BE8 /* SearchAddressViewController.xib */; };
 		2DC29DD32485242C00AF0BE8 /* SearchAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC29DD22485242C00AF0BE8 /* SearchAddressViewModel.swift */; };
@@ -80,8 +78,6 @@
 		2DADE62324816FB000219D0C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2DADE62724816FD300219D0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2DADE62924816FD700219D0C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2DB17F5A2483DFAC007F4B06 /* BoolFormComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolFormComponent.swift; sourceTree = "<group>"; };
-		2DB17F5D2483DFFD007F4B06 /* BoolFormComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoolFormComponent.xib; sourceTree = "<group>"; };
 		2DC29DCD248523E700AF0BE8 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		2DC29DCE248523E700AF0BE8 /* SearchAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchAddressViewController.xib; sourceTree = "<group>"; };
 		2DC29DD22485242C00AF0BE8 /* SearchAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewModel.swift; sourceTree = "<group>"; };
@@ -149,7 +145,6 @@
 				2D0C559924817A27000DF1C7 /* Tools.swift */,
 				2D3FD0F6246EC2CB00EDD02C /* AppDelegate.swift */,
 				2D3FD0F8246EC2CB00EDD02C /* SceneDelegate.swift */,
-				2DB17F5C2483DFE7007F4B06 /* Bool component */,
 				2D3FD126246EC30D00EDD02C /* Map */,
 				2DC29DD12485241300AF0BE8 /* Search */,
 				2DADE61D248135E100219D0C /* Add Review */,
@@ -216,15 +211,6 @@
 				2DADE61A248135CE00219D0C /* AddReviewViewController.xib */,
 			);
 			path = "Add Review";
-			sourceTree = "<group>";
-		};
-		2DB17F5C2483DFE7007F4B06 /* Bool component */ = {
-			isa = PBXGroup;
-			children = (
-				2DB17F5A2483DFAC007F4B06 /* BoolFormComponent.swift */,
-				2DB17F5D2483DFFD007F4B06 /* BoolFormComponent.xib */,
-			);
-			path = "Bool component";
 			sourceTree = "<group>";
 		};
 		2DC29DD12485241300AF0BE8 /* Search */ = {
@@ -372,7 +358,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DB17F5E2483DFFD007F4B06 /* BoolFormComponent.xib in Resources */,
 				2DADE618248134E900219D0C /* ViewController.xib in Resources */,
 				2DADE62624816FD300219D0C /* Localizable.strings in Resources */,
 				2DC29DD0248523E700AF0BE8 /* SearchAddressViewController.xib in Resources */,
@@ -548,7 +533,6 @@
 				2D3FD0F7246EC2CB00EDD02C /* AppDelegate.swift in Sources */,
 				2D3FD0F9246EC2CB00EDD02C /* SceneDelegate.swift in Sources */,
 				2D0C559A24817A27000DF1C7 /* Tools.swift in Sources */,
-				2DB17F5B2483DFAC007F4B06 /* BoolFormComponent.swift in Sources */,
 				2D3FD128246EC50400EDD02C /* MapViewModel.swift in Sources */,
 				2DC29DCF248523E700AF0BE8 /* SearchAddressViewController.swift in Sources */,
 				2DADE61B248135CE00219D0C /* AddReviewViewController.swift in Sources */,
