@@ -110,8 +110,8 @@ final class AddReviewViewController: UIViewController {
     private func getCleanValue() -> Bool {
         return cleanSegmented.isTrue()
     }
-    private func getQualityValue() -> Bool {
-        return quantitySegmented.isTrue()
+    private func getQualityValue() -> Int {
+        return quantitySegmented.selectedSegmentIndex + 1
     }
     private func updateName(name: String) {
         nameLabel.text = name
@@ -121,6 +121,10 @@ final class AddReviewViewController: UIViewController {
         for segmented in ArraySegmented {
             segmented.setTitle(viewModel?.getYesLabel(), forSegmentAt: 0)
             segmented.setTitle(viewModel?.getNoLabel(), forSegmentAt: 1)
+        }
+        
+        for index in 0...4 {
+            quantitySegmented.setTitle(String(index + 1), forSegmentAt: index)
         }
     }
     

@@ -34,7 +34,7 @@ protocol AddReviewViewModelProtocol {
     var getPaymentValue: (() -> Bool)? {get set}
     var getSecurityValue: (() -> Bool)? {get set}
     var getCleanValue: (() -> Bool)? {get set}
-    var getQualityValue: (() -> Bool)? {get set}
+    var getQualityValue: (() -> Int)? {get set}
     var popToPreviousView: (() -> Void)? {get set}
     
     func getYesLabel() -> String
@@ -54,7 +54,7 @@ final class AddReviewViewModel: NSObject {
     var getPaymentValue: (() -> Bool)?
     var getSecurityValue: (() -> Bool)?
     var getCleanValue: (() -> Bool)?
-    var getQualityValue: (() -> Bool)?
+    var getQualityValue: (() -> Int)?
     var popToPreviousView: (() -> Void)?
     
     private var place: GMSPlace? {
@@ -138,7 +138,7 @@ extension AddReviewViewModel: AddReviewViewModelProtocol {
                          payment: getPaymentValue?() ?? false,
                          security: getSecurityValue?() ?? false,
                          clean: getCleanValue?() ?? false,
-                         quality: getQualityValue?() ?? false) { (result) in
+                         quality: getQualityValue?() ?? 0) { (result) in
                             switch result {
                             case .success:
                                 self.popToPreviousView?()

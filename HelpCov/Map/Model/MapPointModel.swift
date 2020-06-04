@@ -26,7 +26,7 @@ struct MapPoint: Codable {
     let payment: Bool
     let security: Bool
     let clean: Bool
-    let quality: Bool
+    let quality: Int
         
     func locationCoordinate() -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: self.latitude,
@@ -62,7 +62,7 @@ final class Parser {
                                                        payment: dict["payment"] as! Bool,
                                                        security: dict["security"] as! Bool,
                                                        clean: dict["clean"] as! Bool,
-                                                       quality: dict["quality"] as! Bool))
+                                                       quality: dict["quality"] as! Int))
                 }
                 
                 
