@@ -10,14 +10,14 @@ import UIKit
 
 class ReviewTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var qualityLabel: UILabel!
-    @IBOutlet weak var maskCustomerLabel: UILabel!
-    @IBOutlet weak var maskEmployeLabel: UILabel!
-    @IBOutlet weak var distancingLabel: UILabel!
-    @IBOutlet weak var handGelLabel: UILabel!
-    @IBOutlet weak var paymentLabel: UILabel!
-    @IBOutlet weak var securityLabel: UILabel!
-    @IBOutlet weak var CleanLabel: UILabel!
+    @IBOutlet private weak var qualityLabel: UILabel!
+    @IBOutlet private weak var maskCustomerLabel: UILabel!
+    @IBOutlet private weak var maskEmployeLabel: UILabel!
+    @IBOutlet private weak var distancingLabel: UILabel!
+    @IBOutlet private weak var handGelLabel: UILabel!
+    @IBOutlet private weak var paymentLabel: UILabel!
+    @IBOutlet private weak var securityLabel: UILabel!
+    @IBOutlet private weak var CleanLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,4 +28,28 @@ class ReviewTableViewCell: UITableViewCell {
 
     }
     
+    func setQuality(_ text: String) {
+        qualityLabel.text = text
+    }
+    func setMaskCustomer(_ text: String) {
+        maskCustomerLabel.text = text
+    }
+    func setMaskEmploye(_ text: String) {
+        maskEmployeLabel.text = text
+    }
+    func setDistancing(_ text: String) {
+        distancingLabel.text = text
+    }
+    func setHandGel(_ text: String) {
+        handGelLabel.text = text
+    }
+    func setPayment(_ text: String) {
+        paymentLabel.text = text
+    }
+    func setSecurity(_ text: String) {
+        securityLabel.text = text
+    }
+    func setClean(_ text: String) {
+        CleanLabel.text = text
+    }
 }

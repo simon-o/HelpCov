@@ -63,7 +63,7 @@ extension MapViewModel: MapViewModelProtocol {
             for (index, tmp) in listMark.enumerated() {
                 if mark == tmp {
                     if let item = list?[index] {
-                        self.displayInfos?(ReviewTableViewController.init(list: item))
+                        self.displayInfos?(ReviewTableViewController.init(list: item, viewModel: ReviewViewModel()))
                     }
                 }
             }

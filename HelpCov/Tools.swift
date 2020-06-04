@@ -19,3 +19,9 @@ extension UISegmentedControl {
         return self.selectedSegmentIndex == 0
     }
 }
+
+extension Bool {
+    func convertString() -> String {
+        return self == true ? "yes_label".localizedString : "no_label".localizedString
+    }
+}
