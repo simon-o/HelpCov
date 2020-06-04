@@ -27,6 +27,7 @@ final class ViewController: UIViewController {
         
         viewModel?.updateLocalisation = updateLocalisation
         viewModel?.addMarker = addMarker
+        viewModel?.displayInfos = displayInfos
         
         navigationController?.title = "HelpCov"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "add_label".localizedString, style: .plain, target: self, action: #selector(addPressed))
@@ -37,6 +38,10 @@ final class ViewController: UIViewController {
     
     @objc private func addPressed(){
         navigationController?.show(AddReviewViewController(), sender: nil)
+    }
+    
+    private func displayInfos(view: ReviewTableViewController) {
+        navigationController?.show(view, sender: nil)
     }
     
     private func startMap() {

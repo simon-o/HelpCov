@@ -16,11 +16,14 @@ protocol MapViewModelProtocol {
     
     var updateLocalisation: ((CLLocationCoordinate2D) -> Void)? {get set}
     var addMarker: (([MKPointAnnotation]) -> Void)? {get set}
+    var displayInfos: ((ReviewTableViewController) -> Void)? {get set}
 }
 
 final class MapViewModel: NSObject {
     var updateLocalisation: ((CLLocationCoordinate2D) -> Void)?
     var addMarker: (([MKPointAnnotation]) -> Void)?
+    var displayInfos: ((ReviewTableViewController) -> Void)?
+    
     let service: MapServiceProtocol
     var list: [ListPoint]? {
         didSet {
@@ -56,10 +59,12 @@ final class MapViewModel: NSObject {
 
 extension MapViewModel: MapViewModelProtocol {
     func searchMarker(mark: MKPointAnnotation) {
-        if let list = listMark {
-            for tmp in list {
+        if let listMark = listMark {
+            for (index, tmp) in listMark.enumerated() {
                 if mark == tmp {
-                    
+                    if let item = list?[index] {
+                        self.displayInfos?(ReviewTableViewController.init(list: item))
+                    }
                 }
             }
         }

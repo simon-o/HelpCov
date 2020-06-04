@@ -14,7 +14,6 @@ import FirebaseDatabase
 protocol MapServiceProtocol: AnyObject {
     func addValue(name: String ,location: CLLocationCoordinate2D, address: String, maskCutomer: Bool, maskEmploye: Bool, distancing: Bool, handGel: Bool, payment: Bool, security: Bool, clean: Bool, quality: Int, completion: @escaping ((Result<Void, Error>) -> Void))
     func getValue(completion: @escaping ((Result<[ListPoint], Error>) -> Void))
-    func filter(child: String)
 }
 
 final class MapService: NSObject {
