@@ -36,6 +36,7 @@ struct MapPoint: Codable {
 
 struct ListPoint: Codable {
     var array: [MapPoint]
+    var rating: Double
 }
 
 final class Parser {
@@ -65,10 +66,18 @@ final class Parser {
                                                        quality: dict["quality"] as! Int))
                 }
                 
-                
-                itemsList.append(ListPoint.init(array: listMapPoint))
+                itemsList.append(ListPoint.init(array: listMapPoint, rating: generateRating(mapPoints: listMapPoint)))
             }
         })
         return itemsList
+    }
+    
+    private func generateRating(mapPoints: [MapPoint]) -> Double {
+        var returnRating = 0.0
+
+        for point in mapPoints {
+            returnRating = (returnRating + Double(point.quality)) / (returnRating == 0.0 ? 1 : 2)
+        }
+        return returnRating
     }
 }

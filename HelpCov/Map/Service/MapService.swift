@@ -53,14 +53,4 @@ extension MapService: MapServiceProtocol {
             }
         }
     }
-    
-    func filter(child: String) {
-        let test = ref.child("items").queryOrdered(byChild: child).queryEqual(toValue: true)
-        test.observe(.value) { (snapshot) in
-            for childSnapshot in snapshot.children {
-                print(childSnapshot)
-            }
-        }
-        
-    }
 }
