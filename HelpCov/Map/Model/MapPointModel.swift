@@ -76,8 +76,9 @@ final class Parser {
         var returnRating = 0.0
 
         for point in mapPoints {
-            returnRating = (returnRating + Double(point.quality)) / (returnRating == 0.0 ? 1 : 2)
+            returnRating += Double(point.quality)
         }
+        returnRating /= Double(mapPoints.count)
         return returnRating
     }
 }
