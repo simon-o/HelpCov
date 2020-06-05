@@ -59,6 +59,10 @@ final class MapViewModel: NSObject {
         }
         return returnArray
     }
+    
+    private func findIndexInList() {
+        
+    }
 }
 
 extension MapViewModel: MapViewModelProtocol {
@@ -71,12 +75,10 @@ extension MapViewModel: MapViewModelProtocol {
     }
     
     func searchMarker(mark: MKPointAnnotation) {
-        if let listMark = listMark {
-            for (index, tmp) in listMark.enumerated() {
-                if mark == tmp {
-                    if let item = list?[index] {
-                        self.displayInfos?(ReviewTableViewController.init(list: item, viewModel: ReviewViewModel()))
-                    }
+        if let list = list {
+            for tmp in list {
+                if mark.title == tmp.array.first?.title {
+                    self.displayInfos?(ReviewTableViewController.init(list: tmp, viewModel: ReviewViewModel()))
                 }
             }
         }
