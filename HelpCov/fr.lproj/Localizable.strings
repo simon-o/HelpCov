@@ -16,6 +16,7 @@
 "clean_label" = "etait ce propre ?";
 "quality_label" = "Qualité du service";
 "search_button_title" = "Chercher l'addresse";
+"rating_label" = "Moyenne";
 
 "add_label" = "Ajouter";
 "save_label" = "Sauvegarder";

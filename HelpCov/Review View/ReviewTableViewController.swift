@@ -37,13 +37,12 @@ class ReviewTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerCell") as! ReviewHeaderTableViewCell
+        guard let header = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerCell") as? ReviewHeaderTableViewCell else {return UIView()}
         viewModel.configure(header: header, infos: listReview)
         return header
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
     }

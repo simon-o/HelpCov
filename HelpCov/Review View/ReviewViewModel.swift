@@ -22,7 +22,7 @@ final class ReviewViewModel: NSObject {
 
 extension ReviewViewModel: ReviewViewModelProtocol {
     func configure(header: ReviewHeaderTableViewCell, infos: ListPoint) {
-        header.setRating(String(infos.rating))
+        header.setRating("\("rating_label".localizedString): \(String(infos.rating))/5")
         header.setTitle(infos.array.first?.title ?? "")
     }
     
