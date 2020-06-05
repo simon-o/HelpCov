@@ -29,6 +29,8 @@
 		2DB634FE2488EA2100488AA8 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB634FD2488EA2100488AA8 /* ReviewViewModel.swift */; };
 		2DB635012488EA5D00488AA8 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB634FF2488EA5D00488AA8 /* ReviewTableViewCell.swift */; };
 		2DB635022488EA5D00488AA8 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB635002488EA5D00488AA8 /* ReviewTableViewCell.xib */; };
+		2DB635062489616100488AA8 /* ReviewHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB635042489616100488AA8 /* ReviewHeaderTableViewCell.swift */; };
+		2DB635072489616100488AA8 /* ReviewHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB635052489616100488AA8 /* ReviewHeaderTableViewCell.xib */; };
 		2DC29DCF248523E700AF0BE8 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC29DCD248523E700AF0BE8 /* SearchAddressViewController.swift */; };
 		2DC29DD0248523E700AF0BE8 /* SearchAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC29DCE248523E700AF0BE8 /* SearchAddressViewController.xib */; };
 		2DC29DD32485242C00AF0BE8 /* SearchAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC29DD22485242C00AF0BE8 /* SearchAddressViewModel.swift */; };
@@ -88,6 +90,8 @@
 		2DB634FD2488EA2100488AA8 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 		2DB634FF2488EA5D00488AA8 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		2DB635002488EA5D00488AA8 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
+		2DB635042489616100488AA8 /* ReviewHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		2DB635052489616100488AA8 /* ReviewHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		2DC29DCD248523E700AF0BE8 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		2DC29DCE248523E700AF0BE8 /* SearchAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchAddressViewController.xib; sourceTree = "<group>"; };
 		2DC29DD22485242C00AF0BE8 /* SearchAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewModel.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				2DB634FD2488EA2100488AA8 /* ReviewViewModel.swift */,
 				2DB634F92488E9F400488AA8 /* ReviewTableViewController.xib */,
 				2DB635032488EA6000488AA8 /* Cell */,
+				2DB635082489616500488AA8 /* Header */,
 			);
 			path = "Review View";
 			sourceTree = "<group>";
@@ -242,6 +247,15 @@
 				2DB635002488EA5D00488AA8 /* ReviewTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2DB635082489616500488AA8 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				2DB635042489616100488AA8 /* ReviewHeaderTableViewCell.swift */,
+				2DB635052489616100488AA8 /* ReviewHeaderTableViewCell.xib */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		2DC29DD12485241300AF0BE8 /* Search */ = {
@@ -393,6 +407,7 @@
 				2DADE618248134E900219D0C /* ViewController.xib in Resources */,
 				2DADE62624816FD300219D0C /* Localizable.strings in Resources */,
 				2DC29DD0248523E700AF0BE8 /* SearchAddressViewController.xib in Resources */,
+				2DB635072489616100488AA8 /* ReviewHeaderTableViewCell.xib in Resources */,
 				2DADE61C248135CE00219D0C /* AddReviewViewController.xib in Resources */,
 				2D3FD103246EC2CC00EDD02C /* LaunchScreen.storyboard in Resources */,
 				2D85F59424810A6F00E51126 /* GoogleService-Info.plist in Resources */,
@@ -565,6 +580,7 @@
 				2D3FD0FB246EC2CB00EDD02C /* ViewController.swift in Sources */,
 				2D3FD0F7246EC2CB00EDD02C /* AppDelegate.swift in Sources */,
 				2DB635012488EA5D00488AA8 /* ReviewTableViewCell.swift in Sources */,
+				2DB635062489616100488AA8 /* ReviewHeaderTableViewCell.swift in Sources */,
 				2D3FD0F9246EC2CB00EDD02C /* SceneDelegate.swift in Sources */,
 				2DB634FE2488EA2100488AA8 /* ReviewViewModel.swift in Sources */,
 				2D0C559A24817A27000DF1C7 /* Tools.swift in Sources */,
