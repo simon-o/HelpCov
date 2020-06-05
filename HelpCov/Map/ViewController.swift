@@ -28,15 +28,27 @@ final class ViewController: UIViewController {
         viewModel?.updateLocalisation = updateLocalisation
         viewModel?.addMarker = addMarker
         viewModel?.displayInfos = displayInfos
+        viewModel?.removeMarkers = removeMarkers
         
         navigationController?.title = "HelpCov"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "filter_label".localizedString, style: .plain, target: self, action: #selector(filterPressed))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "add_label".localizedString, style: .plain, target: self, action: #selector(addPressed))
         
         map.showsUserLocation = true
         map.delegate = self
     }
     
-    @objc private func addPressed(){
+    @objc private func filterPressed() {
+        let controller = FilterViewController()
+        controller.returnFilters = applyFilters
+        self.present(controller, animated: true)
+    }
+    
+    func applyFilters(filters: Int) {
+        viewModel?.apply(filters: filters)
+    }
+    
+    @objc private func addPressed() {
         navigationController?.show(AddReviewViewController(), sender: nil)
     }
     
@@ -57,6 +69,10 @@ final class ViewController: UIViewController {
         for mark in markers {
             map.addAnnotation(mark)
         }
+    }
+    
+    private func removeMarkers(markers: [MKPointAnnotation]) {
+        map.removeAnnotations(markers)
     }
 }
 

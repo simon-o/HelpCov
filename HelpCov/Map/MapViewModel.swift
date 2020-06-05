@@ -13,21 +13,26 @@ protocol MapViewModelProtocol {
     func getLocation()
     func loadMarker()
     func searchMarker(mark: MKPointAnnotation)
+    func apply(filters: Int)
     
     var updateLocalisation: ((CLLocationCoordinate2D) -> Void)? {get set}
     var addMarker: (([MKPointAnnotation]) -> Void)? {get set}
     var displayInfos: ((ReviewTableViewController) -> Void)? {get set}
+    var removeMarkers: (([MKPointAnnotation]) -> Void)? {get set}
 }
 
 final class MapViewModel: NSObject {
     var updateLocalisation: ((CLLocationCoordinate2D) -> Void)?
     var addMarker: (([MKPointAnnotation]) -> Void)?
     var displayInfos: ((ReviewTableViewController) -> Void)?
+    var removeMarkers: (([MKPointAnnotation]) -> Void)?
     
     let service: MapServiceProtocol
     var list: [ListPoint]? {
         didSet {
-            self.listMark = self.createAnnotation()
+            if let list = list {
+                self.listMark = self.createAnnotation(list: list)
+            }
         }
     }
     private let locationManager = CLLocationManager()
@@ -43,9 +48,8 @@ final class MapViewModel: NSObject {
         self.service = service
     }
     
-    private func createAnnotation() -> [MKPointAnnotation] {
+    private func createAnnotation(list: [ListPoint]) -> [MKPointAnnotation] {
         var returnArray = [MKPointAnnotation]()
-        guard let list = list else {return returnArray}
         
         for point in list {
             let annotation = MKPointAnnotation()
@@ -58,6 +62,14 @@ final class MapViewModel: NSObject {
 }
 
 extension MapViewModel: MapViewModelProtocol {
+    func apply(filters: Int) {
+        guard let listMark = listMark else { return }
+        removeMarkers?(listMark)
+        if let list = list {
+            self.listMark = createAnnotation(list: list.filter { $0.rating >= Double(filters) })
+        }
+    }
+    
     func searchMarker(mark: MKPointAnnotation) {
         if let listMark = listMark {
             for (index, tmp) in listMark.enumerated() {

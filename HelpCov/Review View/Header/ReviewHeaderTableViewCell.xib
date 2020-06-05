@@ -29,14 +29,14 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rf-ro-au7">
-                            <rect key="frame" x="0.0" y="99" width="414" height="1"/>
+                            <rect key="frame" x="0.0" y="98" width="414" height="2"/>
                             <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="1" id="aeU-dC-mzd"/>
+                                <constraint firstAttribute="height" constant="2" id="aeU-dC-mzd"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" red="0.82784164507772018" green="0.82784164507772018" blue="0.82784164507772018" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstItem="jhY-Tv-puB" firstAttribute="top" secondItem="3cG-Pl-6Gk" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="B9V-Q0-PVL"/>
                         <constraint firstItem="3cG-Pl-6Gk" firstAttribute="top" secondItem="0jl-dk-A8m" secondAttribute="top" constant="10" id="Gnv-Lb-npT"/>

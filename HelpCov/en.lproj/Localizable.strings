@@ -17,6 +17,9 @@
 "quality_label" = "Quality of service";
 "search_button_title" = "Search address";
 "rating_label" = "Rating";
+"filter_label" = "Filter";
+
+"apply_button" = "Apply";
 
 "add_label" = "Add";
 "save_label" = "Save";

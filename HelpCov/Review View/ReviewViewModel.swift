@@ -14,10 +14,7 @@ protocol ReviewViewModelProtocol {
 }
 
 final class ReviewViewModel: NSObject {
-    
-//    init() {
-//        super.init()
-//    }
+
 }
 
 extension ReviewViewModel: ReviewViewModelProtocol {

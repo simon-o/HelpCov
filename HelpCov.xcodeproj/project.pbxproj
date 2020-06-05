@@ -31,6 +31,9 @@
 		2DB635022488EA5D00488AA8 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB635002488EA5D00488AA8 /* ReviewTableViewCell.xib */; };
 		2DB635062489616100488AA8 /* ReviewHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB635042489616100488AA8 /* ReviewHeaderTableViewCell.swift */; };
 		2DB635072489616100488AA8 /* ReviewHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB635052489616100488AA8 /* ReviewHeaderTableViewCell.xib */; };
+		2DB6350B248A757400488AA8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB63509248A757400488AA8 /* FilterViewController.swift */; };
+		2DB6350C248A757400488AA8 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB6350A248A757400488AA8 /* FilterViewController.xib */; };
+		2DB6350F248A790700488AA8 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6350E248A790700488AA8 /* FilterViewModel.swift */; };
 		2DC29DCF248523E700AF0BE8 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC29DCD248523E700AF0BE8 /* SearchAddressViewController.swift */; };
 		2DC29DD0248523E700AF0BE8 /* SearchAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC29DCE248523E700AF0BE8 /* SearchAddressViewController.xib */; };
 		2DC29DD32485242C00AF0BE8 /* SearchAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC29DD22485242C00AF0BE8 /* SearchAddressViewModel.swift */; };
@@ -92,6 +95,9 @@
 		2DB635002488EA5D00488AA8 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		2DB635042489616100488AA8 /* ReviewHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		2DB635052489616100488AA8 /* ReviewHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		2DB63509248A757400488AA8 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		2DB6350A248A757400488AA8 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		2DB6350E248A790700488AA8 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		2DC29DCD248523E700AF0BE8 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		2DC29DCE248523E700AF0BE8 /* SearchAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchAddressViewController.xib; sourceTree = "<group>"; };
 		2DC29DD22485242C00AF0BE8 /* SearchAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewModel.swift; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 				2D3FD127246EC50400EDD02C /* MapViewModel.swift */,
 				2D85F59A24811EF900E51126 /* Service */,
 				2D85F59924811EF200E51126 /* Model */,
+				2DB6350D248A757800488AA8 /* Filter */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -256,6 +263,16 @@
 				2DB635052489616100488AA8 /* ReviewHeaderTableViewCell.xib */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		2DB6350D248A757800488AA8 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				2DB63509248A757400488AA8 /* FilterViewController.swift */,
+				2DB6350A248A757400488AA8 /* FilterViewController.xib */,
+				2DB6350E248A790700488AA8 /* FilterViewModel.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		2DC29DD12485241300AF0BE8 /* Search */ = {
@@ -409,6 +426,7 @@
 				2DC29DD0248523E700AF0BE8 /* SearchAddressViewController.xib in Resources */,
 				2DB635072489616100488AA8 /* ReviewHeaderTableViewCell.xib in Resources */,
 				2DADE61C248135CE00219D0C /* AddReviewViewController.xib in Resources */,
+				2DB6350C248A757400488AA8 /* FilterViewController.xib in Resources */,
 				2D3FD103246EC2CC00EDD02C /* LaunchScreen.storyboard in Resources */,
 				2D85F59424810A6F00E51126 /* GoogleService-Info.plist in Resources */,
 				2D3FD100246EC2CC00EDD02C /* Assets.xcassets in Resources */,
@@ -574,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DB6350F248A790700488AA8 /* FilterViewModel.swift in Sources */,
 				2D85F59624810D2000E51126 /* MapService.swift in Sources */,
 				2D85F59824811B0000E51126 /* MapPointModel.swift in Sources */,
 				2DADE61F2481360800219D0C /* AddReviewViewModel.swift in Sources */,
@@ -584,6 +603,7 @@
 				2D3FD0F9246EC2CB00EDD02C /* SceneDelegate.swift in Sources */,
 				2DB634FE2488EA2100488AA8 /* ReviewViewModel.swift in Sources */,
 				2D0C559A24817A27000DF1C7 /* Tools.swift in Sources */,
+				2DB6350B248A757400488AA8 /* FilterViewController.swift in Sources */,
 				2DB634FA2488E9F400488AA8 /* ReviewTableViewController.swift in Sources */,
 				2D3FD128246EC50400EDD02C /* MapViewModel.swift in Sources */,
 				2DC29DCF248523E700AF0BE8 /* SearchAddressViewController.swift in Sources */,
