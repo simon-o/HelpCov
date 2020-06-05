@@ -10,6 +10,7 @@ import UIKit
 
 protocol ReviewViewModelProtocol {
     func configure(cell: ReviewTableViewCell, review: MapPoint)
+    func configure(header: ReviewHeaderTableViewCell, infos: ListPoint)
 }
 
 final class ReviewViewModel: NSObject {
@@ -20,6 +21,11 @@ final class ReviewViewModel: NSObject {
 }
 
 extension ReviewViewModel: ReviewViewModelProtocol {
+    func configure(header: ReviewHeaderTableViewCell, infos: ListPoint) {
+        header.setRating(String(infos.rating))
+        header.setTitle(infos.array.first?.title ?? "")
+    }
+    
     func configure(cell: ReviewTableViewCell, review: MapPoint) {
         cell.setQuality("\("quality_label".localizedString): \(String(review.quality))/5")
         cell.setMaskCustomer("\("mask_customer_label".localizedString):\n\(review.maskCustomer.convertString())")

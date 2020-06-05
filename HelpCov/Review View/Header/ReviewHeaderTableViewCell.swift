@@ -1,4 +1,4 @@
-He//
+//
 //  ReviewHeaderTableViewCell.swift
 //  HelpCov
 //
@@ -8,7 +8,7 @@ He//
 
 import UIKit
 
-class ReviewHeaderTableViewCell: UIView {
+class ReviewHeaderTableViewCell: UITableViewHeaderFooterView {
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!

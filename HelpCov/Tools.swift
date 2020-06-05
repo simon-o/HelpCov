@@ -25,3 +25,14 @@ extension Bool {
         return self == true ? "yes_label".localizedString : "no_label".localizedString
     }
 }
+
+extension UIView {
+    func addSubviewFillingParent(_ view: UIView, marginTop: CGFloat = 0, marginLeading: CGFloat = 0, marginBottom: CGFloat = 0, marginTrailing: CGFloat = 0) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        NSLayoutConstraint.activate([topAnchor.constraint(equalTo: view.topAnchor, constant: marginTop),
+                                     trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: marginTrailing),
+                                     bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: marginBottom),
+                                     leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: marginLeading)])
+    }
+}

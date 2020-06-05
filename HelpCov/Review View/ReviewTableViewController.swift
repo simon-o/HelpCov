@@ -29,6 +29,7 @@ class ReviewTableViewController: UITableViewController {
 
         tableView.register(UINib(nibName: String(describing: ReviewTableViewCell.self), bundle: nil), forCellReuseIdentifier: "reviewCell")
         tableView.register(UINib(nibName: String(describing: ReviewHeaderTableViewCell.self), bundle: nil), forHeaderFooterViewReuseIdentifier: "headerCell")
+        
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
@@ -36,7 +37,13 @@ class ReviewTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerCell") as! ReviewHeaderTableViewCell
+        viewModel.configure(header: header, infos: listReview)
+        return header
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
     }
@@ -54,9 +61,5 @@ class ReviewTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell") as? ReviewTableViewCell else { return UITableViewCell() }
         viewModel.configure(cell: cell, review: listReview.array[indexPath.row])
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        <#code#>
     }
 }

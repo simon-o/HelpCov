@@ -9,22 +9,40 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="ipV-QW-BVZ">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+        <view contentMode="scaleToFill" id="ipV-QW-BVZ" customClass="ReviewHeaderTableViewCell" customModule="HelpCov" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cG-Pl-6Gk">
-                    <rect key="frame" x="186" y="15" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhY-Tv-puB">
+                    <rect key="frame" x="20" y="64" width="42" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cG-Pl-6Gk">
+                    <rect key="frame" x="15" y="15" width="384" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="ysp-XU-4uU" firstAttribute="bottom" secondItem="jhY-Tv-puB" secondAttribute="bottom" constant="20" id="DXc-9c-kdR"/>
+                <constraint firstItem="3cG-Pl-6Gk" firstAttribute="leading" secondItem="ipV-QW-BVZ" secondAttribute="leading" constant="15" id="EG8-It-hgo"/>
+                <constraint firstItem="jhY-Tv-puB" firstAttribute="leading" secondItem="ysp-XU-4uU" secondAttribute="leading" constant="20" id="bJX-dg-KGu"/>
+                <constraint firstAttribute="trailing" secondItem="3cG-Pl-6Gk" secondAttribute="trailing" constant="15" id="jHY-hi-RJk"/>
+                <constraint firstItem="jhY-Tv-puB" firstAttribute="top" secondItem="ysp-XU-4uU" secondAttribute="top" constant="20" id="kUk-Fc-SND"/>
+                <constraint firstItem="3cG-Pl-6Gk" firstAttribute="centerX" secondItem="ysp-XU-4uU" secondAttribute="centerX" id="qQ8-N8-twY"/>
+                <constraint firstItem="3cG-Pl-6Gk" firstAttribute="top" secondItem="ipV-QW-BVZ" secondAttribute="top" constant="15" id="tjt-jR-6dW"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="ysp-XU-4uU"/>
-            <point key="canvasLocation" x="320" y="183"/>
+            <connections>
+                <outlet property="ratingLabel" destination="jhY-Tv-puB" id="TTA-ou-nfb"/>
+                <outlet property="titleLabel" destination="3cG-Pl-6Gk" id="q5q-yy-TV9"/>
+            </connections>
+            <point key="canvasLocation" x="318.84057971014494" y="144.97767857142856"/>
         </view>
     </objects>
 </document>
