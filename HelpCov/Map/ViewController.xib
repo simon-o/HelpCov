@@ -19,13 +19,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="coF-6w-pnv">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </mapView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="coF-6w-pnv" secondAttribute="bottom" id="IKc-2g-r9r"/>
-                <constraint firstItem="coF-6w-pnv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="TpC-Mh-oZK"/>
+                <constraint firstAttribute="bottom" secondItem="coF-6w-pnv" secondAttribute="bottom" id="IKc-2g-r9r"/>
+                <constraint firstItem="coF-6w-pnv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TpC-Mh-oZK"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="coF-6w-pnv" secondAttribute="trailing" id="X8I-ML-cW7"/>
                 <constraint firstItem="coF-6w-pnv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zqx-jX-uSr"/>
             </constraints>

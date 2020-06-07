@@ -59,10 +59,6 @@ final class MapViewModel: NSObject {
         }
         return returnArray
     }
-    
-    private func findIndexInList() {
-        
-    }
 }
 
 extension MapViewModel: MapViewModelProtocol {

@@ -35,7 +35,7 @@ class SearchAddressViewController: UIViewController {
         let searchBar = searchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for places"
-        navigationItem.titleView = searchController?.searchBar
+        view.addSubview(searchBar)
         definesPresentationContext = true
         searchController?.hidesNavigationBarDuringPresentation = false
         resultsViewController?.delegate = self
@@ -48,9 +48,7 @@ class SearchAddressViewController: UIViewController {
     }
     
     private func dismiss() {
-        navigationController?.dismiss(animated: true, completion: {
-            self.navigationController?.popViewController(animated: true)
-        })
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

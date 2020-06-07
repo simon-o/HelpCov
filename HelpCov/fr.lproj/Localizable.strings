@@ -6,17 +6,17 @@
   Copyright © 2020 Antoine Simon. All rights reserved.
 */
 
-"name_label" = "Nom";
-"mask_customer_label" = "Port du masque obligatoire pour les clients";
-"mask_employe_label" = "Port du masque obligatoire pour les employes";
-"distancing_label" = "Distances respectées";
+"name_label" = "Nom de l'établissement";
+"mask_customer_label" = "Le port du masque est-il obligatoire ?";
+"mask_employe_label" = "Les employés portaient-ils des masques ?";
+"distancing_label" = "Les distanes de sécurité sont elles signalées et appliquées ?";
 "hand_gel_label" = "Gel Hydro alcoolique disponible";
 "payment_label" = "Payment sans contact";
 "security_label" = "Vous etes vous senti en securité durant votre visite ?";
 "clean_label" = "Etait ce propre ?";
-"quality_label" = "Qualité du service";
+"quality_label" = "Qualité du service:";
 "search_button_title" = "Chercher l'addresse";
-"rating_label" = "Moyenne";
+"rating_label" = "Note global de l'établissement";
 "filter_label" = "Filtre";
 
 "apply_button" = "Appliquer";

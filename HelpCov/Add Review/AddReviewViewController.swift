@@ -15,35 +15,38 @@ final class AddReviewViewController: UIViewController {
     private var viewModel: AddReviewViewModelProtocol?
     private var searchVC: SearchAddressViewController?
     
-    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet private weak var searchButton: UIButton!
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameView: UIView!
     
-    @IBOutlet weak var maskCustomerLabel: UILabel!
-    @IBOutlet weak var maskCustomerSegmented: UISegmentedControl!
+    @IBOutlet private weak var maskCustomerLabel: UILabel!
+    @IBOutlet private weak var maskCustomerSegmented: UISegmentedControl!
     
-    @IBOutlet weak var maskEmployeLabel: UILabel!
-    @IBOutlet weak var maskEmployeSegmented: UISegmentedControl!
+    @IBOutlet private weak var maskEmployeLabel: UILabel!
+    @IBOutlet private weak var maskEmployeSegmented: UISegmentedControl!
     
-    @IBOutlet weak var distancingLabel: UILabel!
-    @IBOutlet weak var distancingSegmented: UISegmentedControl!
+    @IBOutlet private weak var distancingLabel: UILabel!
+    @IBOutlet private weak var distancingSegmented: UISegmentedControl!
     
-    @IBOutlet weak var handGelLabel: UILabel!
-    @IBOutlet weak var handGelSegmented: UISegmentedControl!
+    @IBOutlet private weak var handGelLabel: UILabel!
+    @IBOutlet private weak var handGelSegmented: UISegmentedControl!
     
-    @IBOutlet weak var paymentLabel: UILabel!
-    @IBOutlet weak var paymentSegmented: UISegmentedControl!
+    @IBOutlet private weak var paymentLabel: UILabel!
+    @IBOutlet private weak var paymentSegmented: UISegmentedControl!
     
-    @IBOutlet weak var securityLabel: UILabel!
-    @IBOutlet weak var securitySegmented: UISegmentedControl!
+    @IBOutlet private weak var securityLabel: UILabel!
+    @IBOutlet private weak var securitySegmented: UISegmentedControl!
     
-    @IBOutlet weak var cleanLabel: UILabel!
-    @IBOutlet weak var cleanSegmented: UISegmentedControl!
+    @IBOutlet private weak var cleanLabel: UILabel!
+    @IBOutlet private weak var cleanSegmented: UISegmentedControl!
     
-    @IBOutlet weak var qualityLabel: UILabel!
-    @IBOutlet weak var quantitySegmented: UISegmentedControl!
+    @IBOutlet private weak var qualityLabel: UILabel!
+    @IBOutlet private weak var quantitySegmented: UISegmentedControl!
     
-    @IBOutlet var ArraySegmented: [UISegmentedControl]!
+    @IBOutlet private weak var saveButton: UIButton!
+    
+    @IBOutlet private var ArraySegmented: [UISegmentedControl]!
     
     
     override func viewDidLoad() {
@@ -55,15 +58,18 @@ final class AddReviewViewController: UIViewController {
         setUpSegmented()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel?.donePressed()
+    }
+    
     private func setUp() {
         viewModel = AddReviewViewModel(service: MapService())
         searchVC?.fetchLocation = viewModel?.fetchLocation
         viewModel?.updateName = updateName
         
-        //move
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: viewModel?.getNavTitle(), style: .plain, target: self, action: #selector(donePressed))
-        
         nameLabel.text = nil
+        nameView.isHidden = true
         maskCustomerLabel.text = viewModel?.getMaskCustomer()
         maskEmployeLabel.text = viewModel?.getMaskEmploye()
         distancingLabel.text = viewModel?.getDistance()
@@ -73,6 +79,7 @@ final class AddReviewViewController: UIViewController {
         cleanLabel.text = viewModel?.getClean()
         qualityLabel.text = viewModel?.getQuality()
         searchButton.setTitle(viewModel?.getSearchButton(), for: .normal)
+        saveButton.setTitle(viewModel?.getSaveButton(), for: .normal)
         
         viewModel?.getMaskCustomerValue = getMaskCustomerValue
         viewModel?.getMaskEmployeValue = getMaskEmployeValue
@@ -115,6 +122,7 @@ final class AddReviewViewController: UIViewController {
     }
     private func updateName(name: String) {
         nameLabel.text = name
+        nameView.isHidden = false
     }
     
     private func setUpSegmented() {
@@ -127,14 +135,14 @@ final class AddReviewViewController: UIViewController {
             quantitySegmented.setTitle(String(index + 1), forSegmentAt: index)
         }
     }
-    
-    @objc private func donePressed() {
-        viewModel?.donePressed()
-    }
 
     @IBAction func searchAddressPressed(_ sender: Any) {
         if let tmpSearchVC = searchVC {
-            navigationController?.show(tmpSearchVC, sender: nil)
+            self.present(tmpSearchVC, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        viewModel?.donePressed()
     }
 }

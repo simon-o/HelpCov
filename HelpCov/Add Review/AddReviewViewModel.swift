@@ -24,6 +24,7 @@ protocol AddReviewViewModelProtocol {
     func getQuality() -> String
     func getSearchButton() -> String
     func getNavTitle() -> String
+    func getSaveButton() -> String
     
     var updateName: ((String) -> Void)? {get set}
     
@@ -79,6 +80,10 @@ extension AddReviewViewModel: AddReviewViewModelProtocol {
         place = coordinate
     }
     
+    func getSaveButton() -> String {
+        return "save_label".localizedString
+    }
+    
     func getMaskCustomer() -> String {
         return "mask_customer_label".localizedString
     }
@@ -128,22 +133,24 @@ extension AddReviewViewModel: AddReviewViewModelProtocol {
     }
     
     func donePressed() {
-        service.addValue(name: place?.name ?? "",
-                         location: place?.coordinate ?? CLLocationCoordinate2D.init(latitude: 0.0, longitude: 0.0),
-                         address: place?.formattedAddress ?? "",
-                         maskCutomer: getMaskCustomerValue?() ?? false,
-                         maskEmploye: getMaskEmployeValue?() ?? false,
-                         distancing: getDistancingValue?() ?? false,
-                         handGel: getHandGelValue?() ?? false,
-                         payment: getPaymentValue?() ?? false,
-                         security: getSecurityValue?() ?? false,
-                         clean: getCleanValue?() ?? false,
-                         quality: getQualityValue?() ?? 0) { (result) in
-                            switch result {
-                            case .success:
-                                self.popToPreviousView?()
-                            case .failure(let error): break
-                            }
+        if let place = place {
+            service.addValue(name: place.name ?? "",
+                             location: place.coordinate ,
+                             address: place.formattedAddress ?? "",
+                             maskCutomer: getMaskCustomerValue?() ?? false,
+                             maskEmploye: getMaskEmployeValue?() ?? false,
+                             distancing: getDistancingValue?() ?? false,
+                             handGel: getHandGelValue?() ?? false,
+                             payment: getPaymentValue?() ?? false,
+                             security: getSecurityValue?() ?? false,
+                             clean: getCleanValue?() ?? false,
+                             quality: getQualityValue?() ?? 0) { (result) in
+                                switch result {
+                                case .success:
+                                    self.popToPreviousView?()
+                                case .failure(let error): break
+                                }
+            }
         }
     }
 }

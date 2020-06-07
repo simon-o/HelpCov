@@ -49,11 +49,11 @@ final class ViewController: UIViewController {
     }
     
     @objc private func addPressed() {
-        navigationController?.show(AddReviewViewController(), sender: nil)
+        self.present(AddReviewViewController(), animated: true, completion: nil)
     }
     
     private func displayInfos(view: ReviewTableViewController) {
-        navigationController?.show(view, sender: nil)
+        self.present(view, animated: true)
     }
     
     private func startMap() {
