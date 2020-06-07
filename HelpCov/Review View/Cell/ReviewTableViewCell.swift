@@ -28,28 +28,28 @@ class ReviewTableViewCell: UITableViewCell {
 
     }
     
-    func setQuality(_ text: String) {
-        qualityLabel.text = text
+    func setQuality(_ text: NSAttributedString) {
+        qualityLabel.attributedText = text
     }
-    func setMaskCustomer(_ text: String) {
-        maskCustomerLabel.text = text
+    func setMaskCustomer(_ text: NSAttributedString) {
+        maskCustomerLabel.attributedText = text
     }
-    func setMaskEmploye(_ text: String) {
-        maskEmployeLabel.text = text
+    func setMaskEmploye(_ text: NSAttributedString) {
+        maskEmployeLabel.attributedText = text
     }
-    func setDistancing(_ text: String) {
-        distancingLabel.text = text
+    func setDistancing(_ text: NSAttributedString) {
+        distancingLabel.attributedText = text
     }
-    func setHandGel(_ text: String) {
-        handGelLabel.text = text
+    func setHandGel(_ text: NSAttributedString) {
+        handGelLabel.attributedText = text
     }
-    func setPayment(_ text: String) {
-        paymentLabel.text = text
+    func setPayment(_ text: NSAttributedString) {
+        paymentLabel.attributedText = text
     }
-    func setSecurity(_ text: String) {
-        securityLabel.text = text
+    func setSecurity(_ text: NSAttributedString) {
+        securityLabel.attributedText = text
     }
-    func setClean(_ text: String) {
-        CleanLabel.text = text
+    func setClean(_ text: NSAttributedString) {
+        CleanLabel.attributedText = text
     }
 }

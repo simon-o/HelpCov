@@ -14,7 +14,21 @@ protocol ReviewViewModelProtocol {
 }
 
 final class ReviewViewModel: NSObject {
-
+    private func applyMain(text: String, second: String, bool: Bool?) -> NSAttributedString {
+        let formattext = text + ":\n"
+        let myAttributeMain = [NSAttributedString.Key.foregroundColor: UIColor.blue]
+        let partOne = NSAttributedString(string: formattext, attributes: myAttributeMain)
+        
+        var myAttributeSecond = [NSAttributedString.Key.foregroundColor: bool == true ? UIColor.green : UIColor.red]
+        if bool == nil { myAttributeSecond = [NSAttributedString.Key.foregroundColor: UIColor.black] }
+        let partTwo = NSAttributedString(string: second, attributes: myAttributeSecond)
+        
+        let combination = NSMutableAttributedString()
+        combination.append(partOne)
+        combination.append(partTwo)
+        
+        return combination
+    }
 }
 
 extension ReviewViewModel: ReviewViewModelProtocol {
@@ -24,13 +38,14 @@ extension ReviewViewModel: ReviewViewModelProtocol {
     }
     
     func configure(cell: ReviewTableViewCell, review: MapPoint) {
-        cell.setQuality("\("quality_label".localizedString): \(String(review.quality))/5")
-        cell.setMaskCustomer("\("mask_customer_label".localizedString):\n\(review.maskCustomer.convertString())")
-        cell.setMaskEmploye("\("mask_employe_label".localizedString):\n\(review.maskEmploye.convertString())")
-        cell.setDistancing("\("distancing_label".localizedString):\n\(review.distancing.convertString())")
-        cell.setHandGel("\("hand_gel_label".localizedString):\n\(review.handgel.convertString())")
-        cell.setPayment("\("payment_label".localizedString):\n\(review.payment.convertString())")
-        cell.setSecurity("\("security_label".localizedString):\n\(review.security.convertString())")
-        cell.setClean("\("clean_label".localizedString):\n\(review.clean.convertString())")
+        
+        cell.setQuality(applyMain(text: "quality_label".localizedString, second: (String(review.quality) + "/5"), bool: nil))
+        cell.setMaskCustomer(applyMain(text: "mask_customer_label".localizedString, second: review.maskCustomer.convertString(), bool: review.maskCustomer))
+        cell.setMaskEmploye(applyMain(text: "mask_employe_label".localizedString, second: review.maskEmploye.convertString(), bool: review.maskEmploye))
+        cell.setDistancing(applyMain(text: "distancing_label".localizedString, second: review.distancing.convertString(), bool: review.distancing))
+        cell.setHandGel(applyMain(text: "hand_gel_label".localizedString, second: review.handgel.convertString(), bool: review.handgel))
+        cell.setPayment(applyMain(text: "payment_label".localizedString, second: review.payment.convertString(), bool: review.payment))
+        cell.setSecurity(applyMain(text: "security_label".localizedString, second: review.security.convertString(), bool: review.security))
+        cell.setClean(applyMain(text: "clean_label".localizedString, second: review.clean.convertString(), bool: review.clean))
     }
 }

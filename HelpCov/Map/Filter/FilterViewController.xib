@@ -21,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSR-l9-n4x">
-                    <rect key="frame" x="10" y="54" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="20" y="64" width="37" height="16.5"/>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                    <color key="textColor" red="0.02335285954" green="0.094266481700000002" blue="0.53728783130000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8Md-Wp-Zn6">
-                    <rect key="frame" x="10" y="83" width="329" height="32"/>
+                    <rect key="frame" x="20" y="90.5" width="329" height="32"/>
                     <segments>
                         <segment title="First"/>
                         <segment title="Second"/>
@@ -37,8 +37,17 @@
                     </segments>
                 </segmentedControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwi-e4-woJ">
-                    <rect key="frame" x="184" y="812" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
+                    <rect key="frame" x="40" y="811" width="334" height="31"/>
+                    <color key="backgroundColor" red="0.84320014720000003" green="0.84697097539999999" blue="0.85098165270000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.02335285954" green="0.094266481700000002" blue="0.53728783130000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="applyPressed:" destination="-1" eventType="touchUpInside" id="5uT-xr-3pT"/>
                     </connections>
@@ -46,12 +55,13 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="mSR-l9-n4x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="E7s-KO-7BS"/>
-                <constraint firstItem="mSR-l9-n4x" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="NpE-vn-tKm"/>
-                <constraint firstItem="8Md-Wp-Zn6" firstAttribute="top" secondItem="mSR-l9-n4x" secondAttribute="bottom" constant="8" id="cQ8-q6-Vag"/>
-                <constraint firstItem="8Md-Wp-Zn6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="kyJ-FF-qpQ"/>
+                <constraint firstItem="mSR-l9-n4x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="E7s-KO-7BS"/>
+                <constraint firstItem="mSR-l9-n4x" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="NpE-vn-tKm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qwi-e4-woJ" secondAttribute="trailing" constant="40" id="Pmi-Je-Ziz"/>
+                <constraint firstItem="8Md-Wp-Zn6" firstAttribute="top" secondItem="mSR-l9-n4x" secondAttribute="bottom" constant="10" id="cQ8-q6-Vag"/>
+                <constraint firstItem="Qwi-e4-woJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="iSc-zM-9dN"/>
+                <constraint firstItem="8Md-Wp-Zn6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="kyJ-FF-qpQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Qwi-e4-woJ" secondAttribute="bottom" constant="20" id="rFB-r7-Len"/>
-                <constraint firstItem="Qwi-e4-woJ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="veC-Wq-ZCf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="143"/>
