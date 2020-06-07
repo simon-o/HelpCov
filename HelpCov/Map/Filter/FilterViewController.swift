@@ -44,6 +44,7 @@ class FilterViewController: UIViewController {
     private func saveFilter() {
         let selected = qualitySegmented.selectedSegmentIndex + 1
         returnFilters?(selected)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

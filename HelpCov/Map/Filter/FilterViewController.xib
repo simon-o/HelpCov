@@ -37,8 +37,11 @@
                     </segments>
                 </segmentedControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwi-e4-woJ">
-                    <rect key="frame" x="40" y="811" width="334" height="31"/>
+                    <rect key="frame" x="40" y="792" width="334" height="50"/>
                     <color key="backgroundColor" red="0.84320014720000003" green="0.84697097539999999" blue="0.85098165270000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="xZq-4D-kao"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" red="0.02335285954" green="0.094266481700000002" blue="0.53728783130000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

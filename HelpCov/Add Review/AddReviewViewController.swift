@@ -143,6 +143,6 @@ final class AddReviewViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        viewModel?.donePressed()
+        self.dismiss(animated: true, completion: nil)
     }
 }
