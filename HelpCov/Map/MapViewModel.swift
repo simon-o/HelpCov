@@ -27,8 +27,10 @@ final class MapViewModel: NSObject {
     var displayInfos: ((ReviewTableViewController) -> Void)?
     var removeMarkers: (([MKPointAnnotation]) -> Void)?
     
-    let service: MapServiceProtocol
-    var list: [ListPoint]? {
+    private var isRegionSet = false
+    
+    private let service: MapServiceProtocol
+    private var list: [ListPoint]? {
         didSet {
             if let list = list {
                 self.listMark = self.createAnnotation(list: list)
@@ -105,8 +107,11 @@ extension MapViewModel: MapViewModelProtocol {
 
 extension MapViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-//        updateLocalisation!(locValue)
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        if isRegionSet == false {
+            updateLocalisation?(locValue)
+            isRegionSet = true
+        }
     }
     
     

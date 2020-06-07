@@ -12,8 +12,8 @@ import MapKit
 final class ViewController: UIViewController {
     
     @IBOutlet private weak var map: MKMapView!
-    @IBOutlet weak var filterButton: UIButton!
-    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet private weak var filterButton: UIButton!
+    @IBOutlet private weak var addButton: UIButton!
     
     private var viewModel: MapViewModelProtocol?
     
@@ -45,7 +45,7 @@ final class ViewController: UIViewController {
         self.present(controller, animated: true)
     }
     
-    func applyFilters(filters: Int) {
+    private func applyFilters(filters: Int) {
         viewModel?.apply(filters: filters)
     }
     
@@ -71,7 +71,7 @@ final class ViewController: UIViewController {
     }
     
     private func updateLocalisation(local: CLLocationCoordinate2D) {
-
+        map.setRegion(MKCoordinateRegion.init(center: local, span: MKCoordinateSpan.init(latitudeDelta: 0.5, longitudeDelta: 0.5)), animated: true)
     }
     
     private func addMarker(markers: [MKPointAnnotation]) {
@@ -96,5 +96,6 @@ extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let annotation = view.annotation as? MKPointAnnotation else { return }
         viewModel?.searchMarker(mark: annotation)
+        map.deselectAnnotation(annotation, animated: false)
     }
 }
