@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="HelpCov" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="IQ1-eh-5JP" id="hif-mw-vr6"/>
+                <outlet property="filterButton" destination="bz8-aj-Pqe" id="jcp-RX-0lX"/>
                 <outlet property="map" destination="coF-6w-pnv" id="EFA-ib-4Yg"/>
                 <outlet property="view" destination="iN0-l3-epB" id="zb7-4F-iN4"/>
             </connections>
@@ -21,12 +23,40 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="coF-6w-pnv">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQ1-eh-5JP">
+                    <rect key="frame" x="344" y="59" width="40" height="40"/>
+                    <color key="backgroundColor" red="0.02335285954" green="0.094266481700000002" blue="0.53728783130000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="iOo-9v-7yX"/>
+                        <constraint firstAttribute="width" constant="40" id="mPW-kD-ZcB"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="addButtonPressed:" destination="-1" eventType="touchUpInside" id="As4-Q6-gRz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz8-aj-Pqe">
+                    <rect key="frame" x="30" y="59" width="40" height="40"/>
+                    <color key="backgroundColor" red="0.02335285954" green="0.094266481700000002" blue="0.53728783130000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="AAb-eJ-U09"/>
+                        <constraint firstAttribute="width" constant="40" id="htc-Fp-p0o"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="filterButtonPressed:" destination="-1" eventType="touchUpInside" id="I6u-a6-2kL"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="IQ1-eh-5JP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="0in-5U-pqP"/>
+                <constraint firstItem="bz8-aj-Pqe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="H2J-iE-ddZ"/>
                 <constraint firstAttribute="bottom" secondItem="coF-6w-pnv" secondAttribute="bottom" id="IKc-2g-r9r"/>
                 <constraint firstItem="coF-6w-pnv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TpC-Mh-oZK"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="coF-6w-pnv" secondAttribute="trailing" id="X8I-ML-cW7"/>
+                <constraint firstItem="bz8-aj-Pqe" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="d69-qz-Pda"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="IQ1-eh-5JP" secondAttribute="trailing" constant="30" id="yMb-l3-HkL"/>
                 <constraint firstItem="coF-6w-pnv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zqx-jX-uSr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -12,6 +12,8 @@ import MapKit
 final class ViewController: UIViewController {
     
     @IBOutlet private weak var map: MKMapView!
+    @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     private var viewModel: MapViewModelProtocol?
     
@@ -30,15 +32,14 @@ final class ViewController: UIViewController {
         viewModel?.displayInfos = displayInfos
         viewModel?.removeMarkers = removeMarkers
         
-        navigationController?.title = "HelpCov"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "filter_label".localizedString, style: .plain, target: self, action: #selector(filterPressed))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "add_label".localizedString, style: .plain, target: self, action: #selector(addPressed))
+        setUpButton(button: filterButton, image: UIImage(named: "filter")!)
+        setUpButton(button: addButton, image: UIImage(named: "plus")!)
         
         map.showsUserLocation = true
         map.delegate = self
     }
     
-    @objc private func filterPressed() {
+    private func filterPressed() {
         let controller = FilterViewController()
         controller.returnFilters = applyFilters
         self.present(controller, animated: true)
@@ -48,7 +49,15 @@ final class ViewController: UIViewController {
         viewModel?.apply(filters: filters)
     }
     
-    @objc private func addPressed() {
+    private func setUpButton(button: UIButton, image: UIImage) {
+        button.tintColor = .white
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = button.frame.width/2
+        button.setImage(image, for: .normal)
+        button.setTitle(nil, for: .normal)
+    }
+    
+    private func addPressed() {
         self.present(AddReviewViewController(), animated: true, completion: nil)
     }
     
@@ -73,6 +82,13 @@ final class ViewController: UIViewController {
     
     private func removeMarkers(markers: [MKPointAnnotation]) {
         map.removeAnnotations(markers)
+    }
+    
+    @IBAction func filterButtonPressed(_ sender: Any) {
+        filterPressed()
+    }
+    @IBAction func addButtonPressed(_ sender: Any) {
+        addPressed()
     }
 }
 
