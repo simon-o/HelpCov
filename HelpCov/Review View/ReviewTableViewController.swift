@@ -13,6 +13,8 @@ class ReviewTableViewController: UITableViewController {
     private var listReview: ListPoint
     private var viewModel: ReviewViewModelProtocol
     
+    var closedPressed: (() -> Void)?
+    
     init(list: ListPoint, viewModel: ReviewViewModelProtocol) {
         listReview = list
         self.viewModel = viewModel
@@ -40,9 +42,15 @@ class ReviewTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerCell") as? ReviewHeaderTableViewCell else {return UIView()}
         viewModel.configure(header: header, infos: listReview)
+        header.closedPressed = closeView
+        
         return header
     }
 
+    private func closeView() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
     }

@@ -13,6 +13,7 @@ class ReviewHeaderTableViewCell: UITableViewHeaderFooterView {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!
     
+    var closedPressed: (() -> Void)?
     
     override func awakeFromNib() {
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -26,5 +27,9 @@ class ReviewHeaderTableViewCell: UITableViewHeaderFooterView {
     
     func setRating(_ text: String) {
         ratingLabel.text = text
+    }
+    
+    @IBAction func closePressed(_ sender: Any) {
+        closedPressed?()
     }
 }

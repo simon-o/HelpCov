@@ -17,7 +17,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cG-Pl-6Gk">
-                            <rect key="frame" x="10" y="20" width="394" height="21"/>
+                            <rect key="frame" x="10" y="20" width="359" height="21"/>
                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                             <color key="textColor" red="0.02335285954" green="0.094266481700000002" blue="0.53728783130000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
@@ -28,14 +28,30 @@
                             <color key="textColor" red="0.02335285954" green="0.094266481700000002" blue="0.53728783130000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ag4-Aj-X4X">
+                            <rect key="frame" x="379" y="8" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="S9d-GN-HJE"/>
+                                <constraint firstAttribute="height" constant="30" id="nDH-rC-rgt"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                            <state key="normal" title="X">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="closePressed:" destination="-1" eventType="touchUpInside" id="1e8-vj-fwt"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.95043838458357721" green="0.96262349207823839" blue="0.96262349207823839" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ag4-Aj-X4X" secondAttribute="trailing" constant="5" id="5pv-hB-5Na"/>
                         <constraint firstItem="jhY-Tv-puB" firstAttribute="top" secondItem="3cG-Pl-6Gk" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="B9V-Q0-PVL"/>
                         <constraint firstItem="3cG-Pl-6Gk" firstAttribute="top" secondItem="0jl-dk-A8m" secondAttribute="top" constant="20" id="Gnv-Lb-npT"/>
-                        <constraint firstAttribute="trailing" secondItem="3cG-Pl-6Gk" secondAttribute="trailing" constant="10" id="Iwr-Oq-fk9"/>
+                        <constraint firstItem="ag4-Aj-X4X" firstAttribute="top" secondItem="0jl-dk-A8m" secondAttribute="top" constant="8" id="I7W-XE-rx9"/>
                         <constraint firstAttribute="bottom" secondItem="jhY-Tv-puB" secondAttribute="bottom" constant="19" id="Oz7-hl-EdM"/>
                         <constraint firstItem="jhY-Tv-puB" firstAttribute="leading" secondItem="0jl-dk-A8m" secondAttribute="leading" constant="8" id="Qee-8q-KQI"/>
+                        <constraint firstItem="ag4-Aj-X4X" firstAttribute="leading" secondItem="3cG-Pl-6Gk" secondAttribute="trailing" constant="10" id="pfW-8d-cT4"/>
                         <constraint firstItem="3cG-Pl-6Gk" firstAttribute="leading" secondItem="0jl-dk-A8m" secondAttribute="leading" constant="10" id="tpq-XH-wsU"/>
                     </constraints>
                 </view>
@@ -53,7 +69,7 @@
                 <outlet property="ratingLabel" destination="jhY-Tv-puB" id="TTA-ou-nfb"/>
                 <outlet property="titleLabel" destination="3cG-Pl-6Gk" id="q5q-yy-TV9"/>
             </connections>
-            <point key="canvasLocation" x="318.84057971014494" y="143.63839285714286"/>
+            <point key="canvasLocation" x="318.84057971014494" y="143.30357142857142"/>
         </view>
     </objects>
 </document>
