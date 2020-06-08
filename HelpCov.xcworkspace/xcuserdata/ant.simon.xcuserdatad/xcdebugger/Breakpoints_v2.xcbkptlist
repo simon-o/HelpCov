@@ -40,14 +40,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0B02B8E7-89C1-4EBE-9054-25792AFE9D57"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelpCov/Map/MapViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "createAnnotation(list:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -104,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A1976978-96D6-40B3-B66E-23588630705B"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelpCov/Map/MapViewModel.swift"
@@ -136,7 +136,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FBDB5C3D-1DEA-401E-80B7-00FD9611EFC4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelpCov/Map/MapViewModel.swift"
@@ -146,6 +146,54 @@
             endingLineNumber = "112"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E5CC8F4-6594-407D-9E6C-37E1E6AE9C26"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HelpCov/Map/MapViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "apply(filters:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8E5CC8F4-6594-407D-9E6C-37E1E6AE9C26 - 5173d1ebc5c85459"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HelpCov.MapViewModel.apply(filters: Swift.Int) -&gt; ()"
+                  moduleName = "HelpCov"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ant.simon/Desktop/HelpCovGit/HelpCov/Map/MapViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "508">
+               </Location>
+               <Location
+                  uuid = "8E5CC8F4-6594-407D-9E6C-37E1E6AE9C26 - 4dd587405aaab3c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (HelpCov.ListPoint) -&gt; Swift.Bool in HelpCov.MapViewModel.apply(filters: Swift.Int) -&gt; ()"
+                  moduleName = "HelpCov"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ant.simon/Desktop/HelpCovGit/HelpCov/Map/MapViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
