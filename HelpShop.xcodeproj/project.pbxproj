@@ -64,17 +64,17 @@
 		0DF275B6CCFB44BCAF95CC60 /* Pods-HelpCovTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCovTests.release.xcconfig"; path = "Target Support Files/Pods-HelpCovTests/Pods-HelpCovTests.release.xcconfig"; sourceTree = "<group>"; };
 		2BCC7B1C74E9A56BD289A016 /* Pods-HelpCov-HelpCovUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCov-HelpCovUITests.debug.xcconfig"; path = "Target Support Files/Pods-HelpCov-HelpCovUITests/Pods-HelpCov-HelpCovUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D0C559924817A27000DF1C7 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
-		2D3FD0F3246EC2CB00EDD02C /* HelpCov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpCov.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D3FD0F3246EC2CB00EDD02C /* HelpShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3FD0F6246EC2CB00EDD02C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D3FD0F8246EC2CB00EDD02C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2D3FD0FA246EC2CB00EDD02C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D3FD0FF246EC2CC00EDD02C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D3FD102246EC2CC00EDD02C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D3FD104246EC2CC00EDD02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D3FD109246EC2CC00EDD02C /* HelpCovTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpCovTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D3FD109246EC2CC00EDD02C /* HelpShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3FD10D246EC2CC00EDD02C /* HelpCovTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCovTests.swift; sourceTree = "<group>"; };
 		2D3FD10F246EC2CC00EDD02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D3FD114246EC2CC00EDD02C /* HelpCovUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpCovUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D3FD114246EC2CC00EDD02C /* HelpShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3FD118246EC2CC00EDD02C /* HelpCovUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCovUITests.swift; sourceTree = "<group>"; };
 		2D3FD11A246EC2CC00EDD02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D3FD127246EC50400EDD02C /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -152,9 +152,9 @@
 		2D3FD0F4246EC2CB00EDD02C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2D3FD0F3246EC2CB00EDD02C /* HelpCov.app */,
-				2D3FD109246EC2CC00EDD02C /* HelpCovTests.xctest */,
-				2D3FD114246EC2CC00EDD02C /* HelpCovUITests.xctest */,
+				2D3FD0F3246EC2CB00EDD02C /* HelpShop.app */,
+				2D3FD109246EC2CC00EDD02C /* HelpShopTests.xctest */,
+				2D3FD114246EC2CC00EDD02C /* HelpShopUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -311,9 +311,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2D3FD0F2246EC2CB00EDD02C /* HelpCov */ = {
+		2D3FD0F2246EC2CB00EDD02C /* HelpShop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D3FD11D246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpCov" */;
+			buildConfigurationList = 2D3FD11D246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpShop" */;
 			buildPhases = (
 				4DF55947DAB46805B354C1C0 /* [CP] Check Pods Manifest.lock */,
 				2D3FD0EF246EC2CB00EDD02C /* Sources */,
@@ -326,14 +326,14 @@
 			);
 			dependencies = (
 			);
-			name = HelpCov;
+			name = HelpShop;
 			productName = HelpCov;
-			productReference = 2D3FD0F3246EC2CB00EDD02C /* HelpCov.app */;
+			productReference = 2D3FD0F3246EC2CB00EDD02C /* HelpShop.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D3FD108246EC2CC00EDD02C /* HelpCovTests */ = {
+		2D3FD108246EC2CC00EDD02C /* HelpShopTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D3FD120246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpCovTests" */;
+			buildConfigurationList = 2D3FD120246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpShopTests" */;
 			buildPhases = (
 				7DA08E262B1C1F56C46E2F44 /* [CP] Check Pods Manifest.lock */,
 				2D3FD105246EC2CC00EDD02C /* Sources */,
@@ -345,14 +345,14 @@
 			dependencies = (
 				2D3FD10B246EC2CC00EDD02C /* PBXTargetDependency */,
 			);
-			name = HelpCovTests;
+			name = HelpShopTests;
 			productName = HelpCovTests;
-			productReference = 2D3FD109246EC2CC00EDD02C /* HelpCovTests.xctest */;
+			productReference = 2D3FD109246EC2CC00EDD02C /* HelpShopTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2D3FD113246EC2CC00EDD02C /* HelpCovUITests */ = {
+		2D3FD113246EC2CC00EDD02C /* HelpShopUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D3FD123246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpCovUITests" */;
+			buildConfigurationList = 2D3FD123246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpShopUITests" */;
 			buildPhases = (
 				473092C7640BB132AC5FFBCC /* [CP] Check Pods Manifest.lock */,
 				2D3FD110246EC2CC00EDD02C /* Sources */,
@@ -366,9 +366,9 @@
 			dependencies = (
 				2D3FD116246EC2CC00EDD02C /* PBXTargetDependency */,
 			);
-			name = HelpCovUITests;
+			name = HelpShopUITests;
 			productName = HelpCovUITests;
-			productReference = 2D3FD114246EC2CC00EDD02C /* HelpCovUITests.xctest */;
+			productReference = 2D3FD114246EC2CC00EDD02C /* HelpShopUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -394,7 +394,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2D3FD0EE246EC2CB00EDD02C /* Build configuration list for PBXProject "HelpCov" */;
+			buildConfigurationList = 2D3FD0EE246EC2CB00EDD02C /* Build configuration list for PBXProject "HelpShop" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -408,9 +408,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2D3FD0F2246EC2CB00EDD02C /* HelpCov */,
-				2D3FD108246EC2CC00EDD02C /* HelpCovTests */,
-				2D3FD113246EC2CC00EDD02C /* HelpCovUITests */,
+				2D3FD0F2246EC2CB00EDD02C /* HelpShop */,
+				2D3FD108246EC2CC00EDD02C /* HelpShopTests */,
+				2D3FD113246EC2CC00EDD02C /* HelpShopUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -633,12 +633,12 @@
 /* Begin PBXTargetDependency section */
 		2D3FD10B246EC2CC00EDD02C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D3FD0F2246EC2CB00EDD02C /* HelpCov */;
+			target = 2D3FD0F2246EC2CB00EDD02C /* HelpShop */;
 			targetProxy = 2D3FD10A246EC2CC00EDD02C /* PBXContainerItemProxy */;
 		};
 		2D3FD116246EC2CC00EDD02C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D3FD0F2246EC2CB00EDD02C /* HelpCov */;
+			target = 2D3FD0F2246EC2CB00EDD02C /* HelpShop */;
 			targetProxy = 2D3FD115246EC2CC00EDD02C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -838,7 +838,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelpCov.app/HelpCov";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelpShop.app/HelpShop";
 			};
 			name = Debug;
 		};
@@ -861,7 +861,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelpCov.app/HelpCov";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelpShop.app/HelpShop";
 			};
 			name = Release;
 		};
@@ -910,7 +910,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D3FD0EE246EC2CB00EDD02C /* Build configuration list for PBXProject "HelpCov" */ = {
+		2D3FD0EE246EC2CB00EDD02C /* Build configuration list for PBXProject "HelpShop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D3FD11B246EC2CC00EDD02C /* Debug */,
@@ -919,7 +919,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D3FD11D246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpCov" */ = {
+		2D3FD11D246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpShop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D3FD11E246EC2CC00EDD02C /* Debug */,
@@ -928,7 +928,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D3FD120246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpCovTests" */ = {
+		2D3FD120246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpShopTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D3FD121246EC2CC00EDD02C /* Debug */,
@@ -937,7 +937,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D3FD123246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpCovUITests" */ = {
+		2D3FD123246EC2CC00EDD02C /* Build configuration list for PBXNativeTarget "HelpShopUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D3FD124246EC2CC00EDD02C /* Debug */,
